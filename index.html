@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Advanced Smart Complaint Analyst Bot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Inter", "sans-serif"] },
+          colors: {
+            primary: "#6366f1",
+            "primary-dark": "#4f46e5",
+            "chat-bg": "#111827",
+            "header-bg": "#1f2937",
+            "user-bg": "#374151",
+            "ai-bg": "#1f2937",
+            "analysis-bg": "#292524",
+            "text-light": "#f3f4f6",
+            "text-muted": "#9ca3af",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background-color: #111827;
+      color: #f3f4f6;
+    }
+    .main-container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: #111827;
+    }
+    #message-history::-webkit-scrollbar {
+      width: 8px;
+    }
+    #message-history::-webkit-scrollbar-thumb {
+      background-color: #4b5563;
+      border-radius: 4px;
+    }
+    #message-history::-webkit-scrollbar-track {
+      background-color: #1f2937;
+    }
+    .analysis-table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      background-color: #111827;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    .analysis-table th,
+    .analysis-table td {
+      padding: 0.75rem;
+      border-bottom: 1px solid #374151;
+      text-align: left;
+      color: #f3f4f6;
+    }
+    .analysis-table th {
+      background-color: #1f2937;
+      font-weight: 600;
+    }
+    .stat-card {
+      background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+      border: 1px solid #374151;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      margin: 0.5rem 0;
+    }
+    .scrollable-table {
+      max-height: 500px;
+      overflow-y: auto;
+      border: 1px solid #374151;
+      border-radius: 0.5rem;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+  <div class="main-container">
+    <header class="p-4 md:p-6 bg-header-bg border-b border-gray-700 shadow-xl flex items-center justify-between">
+      <h1 class="text-xl md:text-2xl font-bold text-text-light">🤖 Advanced Complaint Analyst Bot</h1>
+      <p class="text-xs text-text-muted hidden sm:block">Smart AI-powered complete data analysis</p>
+    </header>
+
+    <div id="message-history" class="flex-grow overflow-y-auto p-4 md:p-6 space-y-6">
+      <div class="flex justify-start">
+        <div class="max-w-3xl">
+          <div class="bg-ai-bg text-text-light p-4 md:p-5 rounded-xl rounded-tl-none shadow-lg border border-gray-700">
+            <strong class="text-primary font-bold">👋 Hello!</strong> I'm your Advanced Complaint Analyst Bot with complete natural language understanding and data access!
+            <br /><br />
+            <strong class="text-yellow-300">📊 What I can do:</strong>
+            <ul class="list-disc pl-5 mt-2 text-sm space-y-1 text-text-muted">
+              <li><strong>38839257</strong> — Show ALL complaint details</li>
+              <li><strong>Get any field:</strong> status, category, feedback, rca, capa, assigned_officer, ticket_number, reference_number, department, date_of_issue, date_entry, closed_date, completed_date, etc.</li>
+              <li><strong>show me feedback of 38839257</strong> — Get specific field</li>
+              <li><strong>assigned officer of 38839257</strong> — Get officer name</li>
+              <li><strong>rca1 date of 38839257</strong> or <strong>capa2 of 38839257</strong> — Get nested fields</li>
+              <li><strong>Show me completed complaints in HR</strong> — Filter by status & category</li>
+              <li><strong>+923001234567</strong> — Search by phone (mobile_number)</li>
+              <li><strong>last month</strong> / <strong>last week</strong> — Date range queries</li>
+              <li><strong>statistics</strong> — Full dashboard</li>
+              <li><strong>get all complaints</strong> — Fetch entire database</li>
+              <li><strong>all departments</strong> / <strong>all statuses</strong> / <strong>all categories</strong> — List unique values</li>
+            </ul>
+            <br />
+            <strong class="text-green-300">💡 Try These Queries:</strong>
+            <ul class="list-disc pl-5 mt-1 text-xs space-y-1 text-gray-400">
+              <li>"What is the feedback of complaint 38839257?"</li>
+              <li>"Show me the close_feedback of 38839257"</li>
+              <li>"Get rca of 38839257"</li>
+              <li>"What is capa2_date of 38839257?"</li>
+              <li>"assigned_officer of 38839257"</li>
+              <li>"Show me ticket_number of 38839257"</li>
+              <li>"get complaint_summary of 38839257"</li>
+              <li>"What's the status of complaint 38839257?"</li>
+              <li>"Show all departments"</li>
+              <li>"How many urgent complaints?"</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-4 md:p-6 flex justify-center sticky bottom-0 bg-header-bg border-t border-gray-700 shadow-2xl">
+      <div class="w-full max-w-3xl bg-header-bg rounded-xl shadow-lg border border-gray-600">
+        <div class="flex items-center space-x-3 p-2">
+          <input
+            type="text"
+            id="user-input"
+            class="flex-grow p-3 bg-transparent text-text-light placeholder-gray-500 focus:outline-none"
+            placeholder="Ask me anything about complaints naturally..."
+            onkeydown="if(event.key === 'Enter') routeAndSendMessage()"
+          />
+          <button
+            id="send-button"
+            onclick="routeAndSendMessage()"
+            class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-lg transition duration-200 shadow-md flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Send
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ========== CONFIG ==========
+    const API_VECTOR_SEARCH_URL = "http://127.0.0.1:8000/vector/search";
+    const API_SUMMARY_URL = "http://127.0.0.1:8000/analysis/summary";
+    const API_BRANCH_URL = "http://127.0.0.1:8000/analysis/branch/";
+    const API_COMPLAINT_URL = "http://127.0.0.1:8000/analysis/complaint/";
+    const API_STATUS_URL = "http://127.0.0.1:8000/analysis/status/";
+    const API_FILTER_URL = "http://127.0.0.1:8000/analysis/filter";
+    const API_DATE_RANGE_URL = "http://127.0.0.1:8000/analysis/date-range";
+    const API_OVERTIME_URL = "http://127.0.0.1:8000/analysis/overtime";
+    const API_RESOLUTION_TIME_URL = "http://127.0.0.1:8000/analysis/resolution-time";
+    const API_ASSIGNEE_URL = "http://127.0.0.1:8000/analysis/assignee/";
+    const API_STATISTICS_URL = "http://127.0.0.1:8000/analysis/statistics";
+    const API_GENERATE_REPORT_URL = "http://127.0.0.1:8000/analysis/generate-report";
+    const API_ALL_DATA_URL = "http://127.0.0.1:8000/analysis/all-data";
+    const API_COLUMNS_URL = "http://127.0.0.1:8000/analysis/columns/";
+    const API_QUERY_URL = "http://127.0.0.1:8000/query";
+
+    const messageHistory = document.getElementById("message-history");
+    const userInput = document.getElementById("user-input");
+    const sendButton = document.getElementById("send-button");
+
+    function scrollToBottom() {
+      setTimeout(() => {
+        messageHistory.scrollTop = messageHistory.scrollHeight;
+      }, 100);
+    }
+
+    function appendMessage(sender, content, sources = null, isAnalysis = false) {
+      const isUser = sender === "user";
+      const messageWrapper = document.createElement("div");
+      messageWrapper.className = `flex ${isUser ? "justify-end" : "justify-start"} w-full`;
+      const innerContainer = document.createElement("div");
+      innerContainer.className = "max-w-3xl";
+      const messageBubble = document.createElement("div");
+      let bubbleClasses = "p-4 md:p-5 rounded-xl shadow-lg text-base break-words";
+      if (isUser) {
+        bubbleClasses += " bg-user-bg text-text-light rounded-br-none border border-gray-600";
+      } else if (isAnalysis) {
+        bubbleClasses += " bg-analysis-bg text-text-light rounded-bl-none border border-gray-700";
+      } else {
+        bubbleClasses += " bg-ai-bg text-text-light rounded-bl-none border border-gray-700";
+      }
+      messageBubble.className = bubbleClasses;
+      messageBubble.innerHTML = content;
+      innerContainer.appendChild(messageBubble);
+      messageWrapper.appendChild(innerContainer);
+      messageHistory.appendChild(messageWrapper);
+      scrollToBottom();
+    }
+
+    function formatJsonToHtml(jsonObject) {
+      let html = '<table class="analysis-table"><tbody>';
+      for (const key in jsonObject) {
+        if (jsonObject.hasOwnProperty(key)) {
+          const rawValue = jsonObject[key];
+          if (rawValue === null || rawValue === 0 || rawValue === "0" || rawValue === "" || rawValue === "null" || rawValue === "0.0") {
+            continue;
+          }
+          const value = typeof rawValue === "object" && rawValue !== null
+            ? `<pre class="text-xs p-1 bg-gray-900 text-gray-300 rounded overflow-x-auto">${JSON.stringify(rawValue, null, 2)}</pre>`
+            : rawValue;
+          html += `<tr><th>${key.replace(/_/g, " ")}</th><td>${escapeHtml(value)}</td></tr>`;
+        }
+      }
+      html += "</tbody></table>";
+      return html;
+    }
+
+    function formatRecordsToHtml(records, title = "Complaint Records") {
+      if (!records || records.length === 0) {
+        return {
+          content: `<h2 class="text-lg font-bold text-yellow-400 mb-3">${title}</h2><p>No records found.</p>`,
+          text_content: "No records found.",
+        };
+      }
+
+      let html = `<h2 class="text-lg font-bold text-primary mb-3 border-b border-gray-700 pb-2">${title}</h2>`;
+      html += `<strong>Found ${records.length} records. Displaying the first 5 for preview:</strong>`;
+      let textList = records.map((r) => JSON.stringify(r)).join("; ");
+      const recordsToDisplay = records.slice(0, 5);
+      recordsToDisplay.forEach((record, index) => {
+        html += `<div class="mt-4 p-4 border border-gray-700 bg-ai-bg rounded-lg shadow-md">
+                  <strong class="text-primary font-semibold">Record ${index + 1} / Complaint ID: ${record["Complaint ID"] || "N/A"}</strong>
+                  ${formatJsonToHtml(record)}
+                 </div>`;
+      });
+      if (records.length > 5) {
+        html += `<p class="text-sm text-text-muted mt-3 italic">...and ${records.length - 5} more records were found.</p>`;
+      }
+      return { content: html, text_content: textList };
+    }
+
+    function formatStatisticsHtml(stats) {
+      let html = `<h2 class="text-xl font-bold text-green-400 mb-4 border-b border-gray-700 pb-2">📊 Statistics Summary</h2>`;
+      html += `<div class="grid grid-cols-2 gap-3">`;
+      html += `<div class="stat-card">
+        <div class="text-text-muted text-xs uppercase">Total Complaints</div>
+        <div class="text-2xl font-bold text-primary">${stats.total_complaints || 0}</div>
+      </div>`;
+      html += `<div class="stat-card">
+        <div class="text-text-muted text-xs uppercase">Avg Resolution</div>
+        <div class="text-2xl font-bold text-yellow-400">${stats.average_resolution_time || 'N/A'}</div>
+      </div>`;
+      html += `<div class="stat-card">
+        <div class="text-text-muted text-xs uppercase">Min Resolution</div>
+        <div class="text-2xl font-bold text-green-400">${stats.min_resolution_time || 'N/A'}</div>
+      </div>`;
+      html += `<div class="stat-card">
+        <div class="text-text-muted text-xs uppercase">Max Resolution</div>
+        <div class="text-2xl font-bold text-red-400">${stats.max_resolution_time || 'N/A'}</div>
+      </div>`;
+      html += `<div class="stat-card">
+        <div class="text-text-muted text-xs uppercase">Overtime</div>
+        <div class="text-2xl font-bold text-red-400">${stats.overtime_complaints || 0}</div>
+      </div>`;
+      html += `<div class="stat-card">
+        <div class="text-text-muted text-xs uppercase">Open</div>
+        <div class="text-2xl font-bold text-green-400">${stats.open_complaints || 0}</div>
+      </div>`;
+      html += `</div>`;
+      if (stats.by_category && Object.keys(stats.by_category).length > 0) {
+        html += `<div class="mt-4">
+          <h3 class="text-lg font-semibold text-text-light mb-2">By Category</h3>
+          <div class="space-y-2">`;
+        for (const [cat, count] of Object.entries(stats.by_category)) {
+          html += `<div class="flex justify-between items-center p-2 bg-gray-800 rounded">
+            <span class="text-text-light">${cat}</span>
+            <span class="text-primary font-bold">${count}</span>
+          </div>`;
+        }
+        html += `</div></div>`;
+      }
+      if (stats.by_status && Object.keys(stats.by_status).length > 0) {
+        html += `<div class="mt-4">
+          <h3 class="text-lg font-semibold text-text-light mb-2">By Status</h3>
+          <div class="space-y-2">`;
+        for (const [status, count] of Object.entries(stats.by_status)) {
+          html += `<div class="flex justify-between items-center p-2 bg-gray-800 rounded">
+            <span class="text-text-light">${status}</span>
+            <span class="text-yellow-400 font-bold">${count}</span>
+          </div>`;
+        }
+        html += `</div></div>`;
+      }
+      return html;
+    }
+
+    async function runAnalysisQuery(url) {
+      try {
+        console.log("Fetching URL:", url);
+        const response = await fetch(url, { 
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          mode: 'cors'
+        });
+
+        if (response.status === 404) {
+          return { success: false, message: `No data found for the requested filter.` };
+        }
+
+        if (!response.ok) {
+          const errorDetails = await response.json().catch(() => ({}));
+          throw new Error(errorDetails.detail || response.statusText || `HTTP ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (url.includes("/summary") || url.includes("/statistics")) {
+          return { success: true, data: data, type: "summary" };
+        } else if (url.includes("/analysis/complaint/")) {
+          return { success: true, data: data, type: "single_record" };
+        } else {
+          return { success: true, data: data, type: "record_list" };
+        }
+      } catch (error) {
+        console.error("Analysis Fetch Error:", error);
+        return {
+          success: false,
+          message: `<span class="text-red-400 font-bold">⚠️ Connection Error:</span><br><small class="text-gray-400">${error.message}</small><br><small class="text-gray-500">Make sure backend is running on http://127.0.0.1:8000</small>`,
+        };
+      }
+    }
+
+    async function vectorSearch(query, top_k = 5) {
+      try {
+        const res = await fetch(API_VECTOR_SEARCH_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query, top_k }),
+        });
+        if (!res.ok) throw new Error(`Vector search returned ${res.status}`);
+        const data = await res.json();
+        return data.results || [];
+      } catch (err) {
+        console.error("Vector Search Error:", err);
+        return [];
+      }
+    }
+
+    async function runLLMReportGeneration(records, category) {
+      try {
+        const response = await fetch(API_GENERATE_REPORT_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            category: category,
+            records: records.slice(0, 50)
+          }),
+        });
+        if (!response.ok) {
+          throw new Error(`Report generation failed: ${response.status}`);
+        }
+        const result = await response.json();
+        if (result.report && result.report.trim().length > 0) {
+          return { success: true, content: result.report };
+        } else {
+          return { success: false, message: `<span class='text-red-400 font-bold'>Report Error:</span> Empty report generated.` };
+        }
+      } catch (error) {
+        console.error("Report Generation Error:", error);
+        return { success: false, message: `<span class='text-red-400 font-bold'>Report Error:</span> ${error.message}` };
+      }
+    }
+
+    async function runRAGQuery(question) {
+      try {
+        const response = await fetch(API_QUERY_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question: question }),
+        });
+        if (response.ok) {
+          const result = await response.json();
+          let contentHtml = result.answer || "No answer generated.";
+          if (result.sources && result.sources.length > 0) {
+            contentHtml += '<div class="mt-4 text-sm text-text-muted"><strong>Sources:</strong></div>';
+            result.sources.slice(0, 3).forEach((source, idx) => {
+              const sourceText = source.content || source.text || JSON.stringify(source).substring(0, 200);
+              contentHtml += `<div class="mt-2 p-2 border border-gray-700 rounded text-xs bg-gray-800">
+                <strong class="text-primary">Source ${idx + 1}:</strong>
+                <div class="text-gray-300 mt-1">${escapeHtml(sourceText)}</div>
+              </div>`;
+            });
+          }
+          return { success: true, content: contentHtml, sources: result.sources };
+        }
+        const passages = await vectorSearch(question, 5);
+        if (passages && passages.length > 0) {
+          let answer = `<div class="p-3 bg-blue-900 bg-opacity-30 rounded border border-blue-500">
+            <h3 class="font-bold text-blue-300 mb-2">📚 Found ${passages.length} relevant records:</h3>`;
+          passages.forEach((p, i) => {
+            const text = p.text || p.content || JSON.stringify(p.metadata || {}).substring(0, 150);
+            answer += `<div class="mt-2 p-2 bg-gray-800 rounded text-sm">
+              <strong class="text-primary">Record ${i + 1}</strong>
+              <div class="text-gray-300 text-xs mt-1">${escapeHtml(text)}</div>
+            </div>`;
+          });
+          answer += `</div>`;
+          return { success: true, content: answer, sources: passages };
+        }
+        return { success: true, content: `<div class="p-3 bg-yellow-900 bg-opacity-30 rounded border border-yellow-500">
+          <strong class="text-yellow-300">No relevant information found</strong></div>` };
+      } catch (err) {
+        return { success: false, message: `<span class='text-red-400 font-bold'>Query Error:</span> ${err.message}` };
+      }
+    }
+
+    function parseDateRange(input) {
+      const lower = input.toLowerCase();
+      const now = new Date();
+      if (lower === 'today' || lower === 'complaints today') {
+        return { start: now.toISOString().split('T')[0], end: now.toISOString().split('T')[0] };
+      }
+      if (lower === 'last week' || lower === 'complaints last week' || lower.includes('past week')) {
+        const startDate = new Date(now);
+        startDate.setDate(now.getDate() - 7);
+        return { start: startDate.toISOString().split('T')[0], end: now.toISOString().split('T')[0] };
+      }
+      if (lower === 'last month' || lower === 'complaints last month' || lower.includes('past month')) {
+        const startDate = new Date(now);
+        startDate.setMonth(now.getMonth() - 1);
+        return { start: startDate.toISOString().split('T')[0], end: now.toISOString().split('T')[0] };
+      }
+      if (lower.includes('last 30 days') || lower.includes('past 30 days')) {
+        const startDate = new Date(now);
+        startDate.setDate(now.getDate() - 30);
+        return { start: startDate.toISOString().split('T')[0], end: now.toISOString().split('T')[0] };
+      }
+      if (lower === 'this month' || lower === 'complaints this month') {
+        const startDate = new Date(now.getFullYear(), now.getMonth(), 1);
+        return { start: startDate.toISOString().split('T')[0], end: now.toISOString().split('T')[0] };
+      }
+      if (lower === 'this week' || lower === 'complaints this week') {
+        const startDate = new Date(now);
+        startDate.setDate(now.getDate() - now.getDay());
+        return { start: startDate.toISOString().split('T')[0], end: now.toISOString().split('T')[0] };
+      }
+      const customMatch = input.match(/from\s+(\d{4}-\d{2}-\d{2})\s+to\s+(\d{4}-\d{2}-\d{2})/i);
+      if (customMatch) {
+        return { start: customMatch[1], end: customMatch[2] };
+      }
+      return null;
+    }
+
+    function detectIntent(input) {
+      const trimmed = input.trim();
+      const lower = trimmed.toLowerCase();
+      
+      // GREETING RESPONSES
+      if (lower === 'hi' || lower === 'hey' || lower === 'hello' || lower === 'hiya' || lower === 'hy') {
+        return { type: 'greeting' };
+      }
+
+      // FEEL MORE ALIVE / MOTIVATIONAL COMMANDS
+      if (lower.includes('feel more alive') || lower.includes('motivate') || lower === 'inspire' || lower === 'motivational') {
+        return { type: 'motivational' };
+      }
+
+      // LIST COMMANDS / HELP
+      if (lower === 'commands' || lower === 'help' || lower === 'what can you do' || lower === 'list commands' || lower === '?' || lower === 'cmd') {
+        return { type: 'list_commands' };
+      }
+
+      // Complaint ID (8 digits) - CHECK FIRST
+      if (/^\d{8}$/.test(trimmed)) {
+        return { type: 'complaint_id', value: trimmed };
+      }
+
+      // Get all data
+      if ((lower.includes('get all') || lower.includes('show all') || lower.includes('fetch all')) &&
+          (lower.includes('complaints') || lower.includes('records') || lower.includes('database'))) {
+        return { type: 'all_data' };
+      }
+
+      // Get columns - FIXED COLUMN NAMES
+      if (lower.includes('all statuses') || lower.includes('list statuses')) return { type: 'get_column', col: 'status' };
+      if (lower.includes('all categories') || lower.includes('list categories')) return { type: 'get_column', col: 'complaint_categories' };
+      if (lower.includes('all branches') || lower.includes('list branches')) return { type: 'get_column', col: 'Branch Code' };
+      if (lower.includes('all assignees') || lower.includes('list officers')) return { type: 'get_column', col: 'assigned_officer' };
+      if (lower.includes('all departments')) return { type: 'all_departments' };  // CHANGED: Use new type
+      if (lower.includes('all tickets')) return { type: 'get_column', col: 'ticket_number' };
+      if (lower.includes('all feedback')) return { type: 'get_column', col: 'feedback' };
+      if (lower.includes('all agents') || lower.includes('lodged by')) return { type: 'get_column', col: 'lodged_by_agent' };
+
+      // Count queries
+      const countMatch = lower.match(/how many complaints?\s+(.+)/i);
+      if (countMatch) {
+        const remaining = countMatch[1].toLowerCase();
+        if (remaining.includes('overtime') || remaining.includes('exceeded sla')) {
+          return { type: 'count_overtime' };
+        }
+        const dateRange = parseDateRange(remaining);
+        if (dateRange) {
+          return { type: 'count_date_range', value: dateRange };
+        }
+        const categoryMatch = remaining.match(/(?:in|for|from)\s+(.+?)(?:\s+category)?$/i);
+        if (categoryMatch) {
+          return { type: 'count_category', value: categoryMatch[1].trim() };
+        }
+        const statusMatch = remaining.match(/^(completed|rejected|resolved|pending|open|closed|active)/i);
+        if (statusMatch) {
+          return { type: 'count_status', value: statusMatch[1] };
+        }
+        return { type: 'count_total' };
+      }
+
+      // Complaint field queries
+      const complaintFieldMatch = lower.match(/(?:what is |what's |show me |tell me |get |fetch )?(?:the )?(status|category|branch code|branch|assignee|officer|phone|entry date|closed date|complete date|feedback|close feedback|proposed solution|additional comments|resolution|date|issue date|ticket|ticket number|reference|reference number|urgent|anonymous|department|person issue|history|previous history|rca|capa|rca date|capa date|bounced|bounced date)\s+(?:of |for )?(?:complaint )?(?:id )?(\d{8}|\d+)/i);
+      if (complaintFieldMatch) {
+        return {
+          type: 'complaint_field_query',
+          field: complaintFieldMatch[1].trim(),
+          complaint_id: complaintFieldMatch[2]
+        };
+      }
+
+      // Complaint question with ID
+      const complaintQuestionMatch = lower.match(/complaint\s+(?:id\s+)?(\d{8})/i);
+      if (complaintQuestionMatch) {
+        return {
+          type: 'complaint_question',
+          complaint_id: complaintQuestionMatch[1],
+          question: trimmed
+        };
+      }
+
+      // Phone number
+      if (/^[\d\s\-\+\(\)]{10,15}$/.test(trimmed.replace(/\s/g, ''))) {
+        return { type: 'phone', value: trimmed.replace(/\s/g, '') };
+      }
+
+      // Complex filter - "show me completed complaints in HR"
+      const complexFilterMatch = lower.match(/show me (completed|rejected|resolved|pending|open|closed|active)\s+complaints?\s+(?:in|for|from)\s+(.+)/i);
+      if (complexFilterMatch) {
+        return { type: 'complex_filter', status: complexFilterMatch[1], category: complexFilterMatch[2].trim() };
+      }
+
+      const filterMatch = lower.match(/(completed|rejected|resolved|pending|open|closed|active)\s+complaints?\s+(?:in|for|from)\s+(.+)/i);
+      if (filterMatch) {
+        return { type: 'complex_filter', status: filterMatch[1], category: filterMatch[2].trim() };
+      }
+
+      // Date range
+      const dateRange = parseDateRange(lower);
+      if (dateRange) {
+        return { type: 'date_range', value: dateRange };
+      }
+
+      // Resolution time for specific complaint
+      if (lower.includes('resolution time')) {
+        const idMatch = lower.match(/\b\d{8}\b/);
+        if (idMatch) {
+          return { type: 'complaint_resolution_time', value: idMatch[0] };
+        }
+        return { type: 'resolution_time' };
+      }
+
+      // Overtime
+      if (lower.includes('overtime') || lower.includes('sla violation') || lower.includes('exceeded sla')) {
+        return { type: 'overtime' };
+      }
+
+      // Statistics
+      if (lower.includes('statistics') || lower.includes('stats') || lower === 'overview') {
+        return { type: 'statistics' };
+      }
+
+      // Analysis report - must check for numbers to avoid false matches
+      if ((lower.includes('analysis') || lower.includes('report')) && !(/^\d{8}/.test(lower))) {
+        let categoryValue = trimmed
+          .replace(/^analysis report on category /i, '')
+          .replace(/^analysis report on /i, '')
+          .replace(/^analysis report for /i, '')
+          .replace(/^report on category /i, '')
+          .replace(/^report on /i, '')
+          .replace(/^report for /i, '')
+          .replace(/^analysis /i, '')
+          .replace(/^report /i, '')
+          .trim();
+        if (categoryValue && categoryValue.length > 0 && !/^\d{8}/.test(categoryValue)) {
+          return { type: 'analysis_report', value: categoryValue };
+        }
+      }
+
+      // Branch code
+      if (/^[A-Z]{2,3}$/i.test(trimmed)) {
+        return { type: 'branch', value: trimmed.toUpperCase() };
+      }
+
+      // Summary
+      if (lower === 'summary' || lower === 'total') {
+        return { type: 'summary' };
+      }
+
+      // Assignee
+      const assigneeMatch = trimmed.match(/(?:assignee|assigned to|by)\s+([a-zA-Z\s]+)/i);
+      if (assigneeMatch) {
+        return { type: 'assignee', value: assigneeMatch[1].trim() };
+      }
+
+      // Status
+      const statusKeywords = ['resolved', 'pending', 'active', 'closed', 'open', 'escalated', 'completed', 'rejected'];
+      for (const status of statusKeywords) {
+        if (lower === status || lower === status + ' complaints' || lower === 'show ' + status) {
+          return { type: 'status', value: status };
+        }
+      }
+
+      // Simple category - just category name
+      if (lower.includes('category ')) {
+        const catName = lower.replace(/category\s+/i, '').trim();
+        if (catName && catName.length > 0 && !/^\d{8}/.test(catName)) {
+          return { type: 'category', value: catName };
+        }
+      }
+
+      // Single word categories
+      const knownCategories = ['wages', 'benefits', 'harassment', 'discrimination', 'safety', 'workplace', 'leave', 'compensation', 'bullying', 'hr', 'finance', 'it'];
+      for (const cat of knownCategories) {
+        if (lower === cat || (lower.split(' ').length <= 2 && lower.includes(cat) && lower.length < 50 && !/^\d{8}/.test(lower))) {
+          return { type: 'category', value: cat };
+        }
+      }
+
+      // Default: general question (RAG)
+      return { type: 'general', value: trimmed };
+    }
+
+    async function routeAndSendMessage() {
+      const question = userInput.value.trim();
+      if (!question) return;
+
+      appendMessage("user", question);
+      userInput.value = "";
+      sendButton.disabled = true;
+      sendButton.innerHTML =
+        '<span class="flex items-center"><svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle></svg> Analyzing...</span>';
+
+      const intent = detectIntent(question);
+      let result;
+      let url;
+      let displayTitle = "";
+
+      try {
+        switch(intent.type) {
+          case 'all_data':
+            url = API_ALL_DATA_URL;
+            const allDataResult = await runAnalysisQuery(url);
+            if (allDataResult.success) {
+              const complaints = Array.isArray(allDataResult.data) ? allDataResult.data : [];
+              
+              // Add resolution time to each record for display
+              const complaintsWithResTime = complaints.map(complaint => {
+                const startDate = complaint['date_of_issue'] || complaint['date_entry'];
+                const endDate = complaint['completed_date'] || complaint['closed_date'] || complaint['rca_date'] || complaint['capa_date'];
+                
+                if (startDate && endDate) {
+                  const start = new Date(startDate);
+                  const end = new Date(endDate);
+                  const timeDiff = Math.abs(end - start);
+                  const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+                  complaint['resolution_days'] = days;
+                }
+                
+                return complaint;
+              });
+              
+              const formattedData = formatRecordsToHtml(complaintsWithResTime, "All Complaints");
+              result = { success: true, content: formattedData.content, isAnalysis: true };
+            } else {
+              result = allDataResult;
+            }
+            break;
+
+          case 'get_column':
+            url = API_COLUMNS_URL + intent.col;
+            const colResult = await runAnalysisQuery(url);
+            if (colResult.success) {
+              const values = Array.isArray(colResult.data) ? colResult.data : colResult.data.values || [];
+              const html = `<h3 class="text-lg font-bold text-primary mb-3">All ${intent.col}s (${values.length} unique)</h3>
+                <div class="scrollable-table p-3 bg-gray-800">
+                  ${values.slice(0, 20).map(v => `<div class="py-1 text-text-light">• ${v}</div>`).join('')}
+                  ${values.length > 20 ? `<div class="text-gray-400 mt-3">...and ${values.length - 20} more</div>` : ''}
+                </div>`;
+              result = { success: true, content: html, isAnalysis: true };
+            } else {
+              result = colResult;
+            }
+            break;
+
+          case 'count_overtime':
+            url = API_OVERTIME_URL;
+            const countOvertimeResult = await runAnalysisQuery(url);
+            if (countOvertimeResult.success && countOvertimeResult.data) {
+              const count = Array.isArray(countOvertimeResult.data) ? countOvertimeResult.data.length : 0;
+              result = {
+                success: true,
+                content: `<div class="p-4 bg-red-900 bg-opacity-30 rounded border border-red-500">
+                  <strong class="text-red-300 text-xl">Overtime Complaints: </strong>
+                  <span class="text-2xl font-bold text-red-400">${count}</span>
+                </div>`,
+                isAnalysis: true
+              };
+            } else {
+              result = countOvertimeResult;
+            }
+            break;
+
+          case 'count_date_range':
+            url = `${API_DATE_RANGE_URL}?start_date=${intent.value.start}&end_date=${intent.value.end}`;
+            const countDateResult = await runAnalysisQuery(url);
+            if (countDateResult.success && countDateResult.data) {
+              const count = Array.isArray(countDateResult.data) ? countDateResult.data.length : 0;
+              result = {
+                success: true,
+                content: `<div class="p-4 bg-blue-900 bg-opacity-30 rounded border border-blue-500">
+                  <strong class="text-blue-300">Complaints (${intent.value.start} to ${intent.value.end}): </strong>
+                  <span class="text-2xl font-bold text-blue-400">${count}</span>
+                </div>`,
+                isAnalysis: true
+              };
+            } else {
+              result = countDateResult;
+            }
+            break;
+
+          case 'count_category':
+            const countCatUrl = `${API_FILTER_URL}?category=${encodeURIComponent(intent.value)}`;
+            const countCatResult = await runAnalysisQuery(countCatUrl);
+            if (countCatResult.success && countCatResult.data) {
+              const count = Array.isArray(countCatResult.data) ? countCatResult.data.length : 0;
+              result = {
+                success: true,
+                content: `<div class="p-4 bg-purple-900 bg-opacity-30 rounded border border-purple-500">
+                  <strong class="text-purple-300">Complaints in ${intent.value}: </strong>
+                  <span class="text-2xl font-bold text-purple-400">${count}</span>
+                </div>`,
+                isAnalysis: true
+              };
+            } else {
+              result = countCatResult;
+            }
+            break;
+
+          case 'count_status':
+            url = API_STATUS_URL + intent.value;
+            const countStatusResult = await runAnalysisQuery(url);
+            if (countStatusResult.success && countStatusResult.data) {
+              const count = Array.isArray(countStatusResult.data) ? countStatusResult.data.length : 0;
+              result = {
+                success: true,
+                content: `<div class="p-4 bg-green-900 bg-opacity-30 rounded border border-green-500">
+                  <strong class="text-green-300">Complaints with status "${intent.value}": </strong>
+                  <span class="text-2xl font-bold text-green-400">${count}</span>
+                </div>`,
+                isAnalysis: true
+              };
+            } else {
+              result = countStatusResult;
+            }
+            break;
+
+          case 'count_total':
+            url = API_SUMMARY_URL;
+            const countTotalResult = await runAnalysisQuery(url);
+            if (countTotalResult.success && countTotalResult.data) {
+              result = {
+                success: true,
+                content: `<div class="p-4 bg-indigo-900 bg-opacity-30 rounded border border-indigo-500">
+                  <strong class="text-indigo-300">Total Complaints: </strong>
+                  <span class="text-2xl font-bold text-indigo-400">${countTotalResult.data.total || 0}</span>
+                </div>`,
+                isAnalysis: true
+              };
+            } else {
+              result = countTotalResult;
+            }
+            break;
+
+          case 'complaint_field_query':
+            url = API_COMPLAINT_URL + intent.complaint_id;
+            const fieldResult = await runAnalysisQuery(url);
+            if (fieldResult.success && fieldResult.data) {
+              const complaint = fieldResult.data;
+              const field = intent.field.toLowerCase();
+              let fieldValue = "Not available";
+              let fieldName = intent.field;
+              
+              const fieldMappings = {
+                'status': ['status', 'Status'],
+                'category': ['complaint_categories', 'Category', 'category'],
+                'branch': ['Branch Code', 'branch_code', 'Branch', 'branch'],
+                'branch code': ['Branch Code', 'branch_code', 'Branch'],
+                'feedback': ['feedback', 'Feedback', 'close feedback', 'Customer Feedback'],
+                'close feedback': ['close_feedback', 'feedback', 'Close Feedback', 'closing feedback'],
+                'proposed solution': ['proposed_solution', 'proposed solution', 'Solution'],
+                'additional comments': ['additional_comments', 'additional comments', 'Comments'],
+                'resolution': ['rca', 'Resolution', 'resolution', 'RCA'],
+                'assignee': ['assigned_officer', 'Assignee', 'assignee', 'Assigned To', 'person_issue'],
+                'officer': ['assigned_officer', 'assignee', 'person_issue'],
+                'phone': ['mobile_number', 'Phone', 'phone', 'Contact Phone'],
+                'entry date': ['date_entry', 'Entry Date', 'date entry', 'Date Entered'],
+                'closed date': ['closed_date', 'Closed Date', 'closed date', 'Close Date'],
+                'complete date': ['completed_date', 'Complete Date', 'Completed Date', 'completed Date'],
+                'date': ['date_entry', 'date_of_issue', 'Entry Date', 'Date'],
+                'issue date': ['date_of_issue', 'Date of Issue'],
+                'ticket': ['ticket_number', 'Ticket Number'],
+                'ticket number': ['ticket_number', 'Ticket Number'],
+                'reference': ['reference_number', 'Reference Number'],
+                'reference number': ['reference_number', 'Reference Number'],
+                'urgent': ['is_urgent', 'is_urgent', 'Urgent'],
+                'anonymous': ['is_anonymous', 'is_anonymous', 'Anonymous'],
+                'department': ['concerned_department', 'Department', 'department'],
+                'person issue': ['person_issue', 'Person Issue', 'assigned_officer'],
+                'history': ['previous_history', 'History', 'history'],
+                'previous history': ['previous_history', 'Previous History'],
+                'in process': ['in_process_date', 'In Process Date'],
+                'in_process': ['in_process_date', 'In Process Date'],
+                'capa': ['capa', 'CAPA', 'capa_summary'],
+                'rca': ['rca', 'RCA', 'rca_summary'],
+                'rca date': ['rca_date', 'RCA Date'],
+                'capa date': ['capa_date', 'CAPA Date'],
+                'bounced': ['bounced_date', 'Bounced Date'],
+                'bounced date': ['bounced_date', 'Bounced Date'],
+                'lodged by agent': ['lodged_by_agent', 'Lodged By Agent'],
+                'lodged from web': ['lodged_from_web', 'Lodged From Web'],
+                'rejected': ['rejected_date', 'Rejected Date'],
+                'rejected date': ['rejected_date', 'Rejected Date'],
+                'approval': ['approval_date', 'Approval Date'],
+                'approval date': ['approval_date', 'Approval Date'],
+                'declined': ['declined', 'Declined'],
+                'enabled': ['enabled', 'Enabled'],
+                'summary': ['complaint_summary', 'Complaint Summary', 'feedback_summary'],
+                'complaint summary': ['complaint_summary', 'Complaint Summary'],
+                'feedback summary': ['feedback_summary', 'Feedback Summary'],
+                'unclosed': ['unclosed_date', 'Unclosed Date'],
+                'rca deadline': ['rca_deadline', 'RCA Deadline'],
+                'rca1': ['rca1', 'RCA 1'],
+                'rca2': ['rca2', 'RCA 2'],
+                'rca3': ['rca3', 'RCA 3'],
+                'capa1': ['capa1', 'CAPA 1'],
+                'capa2': ['capa2', 'CAPA 2'],
+                'capa3': ['capa3', 'CAPA 3'],
+                'capa1 date': ['capa1_date', 'CAPA 1 Date'],
+                'capa2 date': ['capa2_date', 'CAPA 2 Date'],
+                'capa3 date': ['capa3_date', 'CAPA 3 Date'],
+                'rca1 date': ['rca1_date', 'RCA 1 Date'],
+                'rca2 date': ['rca2_date', 'RCA 2 Date'],
+                'rca3 date': ['rca3_date', 'RCA 3 Date'],
+                'rca1 deadline': ['rca1_deadline', 'RCA 1 Deadline'],
+                'rca2 deadline': ['rca2_deadline', 'RCA 2 Deadline'],
+                'feedback1': ['feedback1', 'Feedback 1'],
+                'bounced1': ['bounced1_date', 'Bounced 1 Date'],
+                'bounced2': ['bounced2_date', 'Bounced 2 Date'],
+                'bounced3': ['bounced3_date', 'Bounced 3 Date'],
+                'complaint no': ['complaint_no', 'Complaint No']
+              };
+              
+              const possibleFields = fieldMappings[field] || [intent.field];
+              for (const possibleField of possibleFields) {
+                if (complaint[possibleField] !== undefined && complaint[possibleField] !== null) {
+                  fieldValue = complaint[possibleField];
+                  fieldName = possibleField;
+                  break;
+                }
+              }
+              
+              result = {
+                success: true,
+                content: `<div class="p-4 bg-gray-800 rounded-lg border border-primary">
+                  <h3 class="text-lg font-bold text-primary mb-2">Complaint ID: ${intent.complaint_id}</h3>
+                  <div class="text-text-light">
+                    <strong class="text-yellow-300">${fieldName}:</strong> 
+                    <span class="ml-2">${fieldValue}</span>
+                  </div>
+                </div>`,
+                isAnalysis: true
+              };
+            } else {
+              result = { success: false, message: `Complaint ID ${intent.complaint_id} not found.` };
+            }
+            break;
+
+          case 'complaint_question':
+            url = API_COMPLAINT_URL + intent.complaint_id;
+            const complaintResult = await runAnalysisQuery(url);
+            if (complaintResult.success && complaintResult.data) {
+              displayTitle = `Complaint Details (ID: ${intent.complaint_id})`;
+              const complaintHtml = `<strong>${displayTitle}:</strong> ${formatJsonToHtml(complaintResult.data)}`;
+              appendMessage("ai", complaintHtml, null, true);
+              result = await runRAGQuery(intent.question);
+            } else {
+              result = { success: false, message: `Complaint ID ${intent.complaint_id} not found.` };
+            }
+            break;
+
+          case 'complaint_resolution_time':
+            url = API_COMPLAINT_URL + intent.value;
+            const resTimeComplaint = await runAnalysisQuery(url);
+            if (resTimeComplaint.success && resTimeComplaint.data) {
+              const complaint = resTimeComplaint.data;
+              
+              // Try to find start date (issue date or entry date)
+              const startDate = complaint['date_of_issue'] || complaint['date_entry'] || 
+                               complaint['Date of Issue'] || complaint['Date Entry'];
+              
+              // Try to find end date (completed, closed, rca, or capa date)
+              const endDate = complaint['completed_date'] || complaint['closed_date'] || 
+                             complaint['rca_date'] || complaint['capa_date'] ||
+                             complaint['Completed Date'] || complaint['Closed Date'] || 
+                             complaint['RCA Date'] || complaint['CAPA Date'];
+              
+              if (startDate && endDate) {
+                const start = new Date(startDate);
+                const end = new Date(endDate);
+                
+                // Calculate days
+                const timeDiff = Math.abs(end - start);
+                const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+                
+                // Calculate hours and minutes for more detail
+                const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
+                
+                result = {
+                  success: true,
+                  content: `<div class="p-4 bg-gray-800 rounded-lg border border-primary">
+                    <h3 class="text-lg font-bold text-primary mb-3">⏱️ Resolution Time for Complaint ${intent.value}</h3>
+                    <div class="space-y-2">
+                      <div><strong class="text-yellow-300">Complaint Date (Issue Date):</strong> <span class="text-text-light">${startDate}</span></div>
+                      <div><strong class="text-yellow-300">Resolved Date:</strong> <span class="text-text-light">${endDate}</span></div>
+                      <div class="mt-3 p-3 bg-indigo-900 bg-opacity-30 rounded border border-indigo-500">
+                        <div><strong class="text-green-300">⏱️ Total Resolution Time:</strong> <span class="text-white text-2xl font-bold">${days} days</span></div>
+                        <div class="text-sm text-gray-300 mt-1">(${hours} hours, ${minutes} minutes)</div>
+                      </div>
+                    </div>
+                  </div>`,
+                  isAnalysis: true
+                };
+              } else {
+                result = { success: false, message: `<span class="text-red-400">Cannot calculate resolution time</span><br><small>Missing dates: Start=${startDate || 'N/A'}, End=${endDate || 'N/A'}</small>` };
+              }
+            } else {
+              result = { success: false, message: `Complaint ID ${intent.value} not found.` };
+            }
+            break;
+
+          case 'statistics':
+            url = API_ALL_DATA_URL;
+            const allDataStats = await runAnalysisQuery(url);
+            if (allDataStats.success && allDataStats.data) {
+              const complaints = Array.isArray(allDataStats.data) ? allDataStats.data : [];
+              
+              // Calculate resolution times
+              let resolutionTimes = [];
+              let overtimeCount = 0;
+              let openCount = 0;
+              let categoryCount = {};
+              let statusCount = {};
+              
+              complaints.forEach(complaint => {
+                // Resolution time calculation
+                let startDate = complaint['date_of_issue'] || complaint['date_entry'] || 
+                               complaint['Entry Date'] || complaint['entry_date'];
+                let endDate = complaint['completed_date'] || complaint['closed_date'] || 
+                             complaint['rca_date'] || complaint['capa_date'];
+                
+                if (startDate && endDate) {
+                  try {
+                    startDate = String(startDate).trim();
+                    endDate = String(endDate).trim();
+                    
+                    const start = new Date(startDate);
+                    const end = new Date(endDate);
+                    
+                    if (!isNaN(start.getTime()) && !isNaN(end.getTime())) {
+                      const timeDiff = Math.abs(end - start);
+                      const days = timeDiff / (1000 * 60 * 60 * 24);
+                      
+                      if (days > 0 && !isNaN(days) && isFinite(days)) {
+                        resolutionTimes.push(Math.ceil(days));
+                      }
+                    }
+                  } catch (e) {
+                    // Skip invalid dates
+                  }
+                }
+                
+                // Status counting
+                const status = complaint['status'];
+                if (status) {
+                  statusCount[status] = (statusCount[status] || 0) + 1;
+                  if (status.toLowerCase() === 'open' || status.toLowerCase() === 'pending') {
+                    openCount++;
+                  }
+                }
+                
+                // Category counting
+                const category = complaint['complaint_categories'];
+                if (category) {
+                  categoryCount[category] = (categoryCount[category] || 0) + 1;
+                }
+                
+                // Overtime check
+                const isUrgent = complaint['is_urgent'];
+                if (isUrgent && isUrgent.toString().toLowerCase() === 'yes') {
+                  overtimeCount++;
+                }
+              });
+              
+              let avgRes = 'N/A', minRes = 'N/A', maxRes = 'N/A', medianRes = 'N/A';
+              
+              if (resolutionTimes.length > 0) {
+                const sorted = resolutionTimes.sort((a, b) => a - b);
+                avgRes = (resolutionTimes.reduce((a, b) => a + b, 0) / resolutionTimes.length).toFixed(1) + ' days';
+                minRes = sorted[0] + ' days';
+                maxRes = sorted[sorted.length - 1] + ' days';
+                medianRes = sorted[Math.floor(sorted.length / 2)] + ' days';
+              }
+              
+              const stats = {
+                total_complaints: complaints.length,
+                average_resolution_time: avgRes,
+                min_resolution_time: minRes,
+                max_resolution_time: maxRes,
+                median_resolution_time: medianRes,
+                overtime_complaints: overtimeCount,
+                open_complaints: openCount,
+                by_category: categoryCount,
+                by_status: statusCount
+              };
+              
+              result = { success: true, content: formatStatisticsHtml(stats), isAnalysis: true };
+            } else {
+              result = allDataStats;
+            }
+            break;
+
+          case 'complex_filter':
+            const complexFilterUrl = `${API_FILTER_URL}?category=${encodeURIComponent(intent.category)}&status=${encodeURIComponent(intent.status)}`;
+            displayTitle = `${intent.status.charAt(0).toUpperCase() + intent.status.slice(1)} Complaints in ${intent.category}`;
+            const complexResult = await runAnalysisQuery(complexFilterUrl);
+            if (complexResult.success && complexResult.data) {
+              const formattedData = formatRecordsToHtml(complexResult.data, displayTitle);
+              result = { success: true, content: formattedData.content, isAnalysis: true };
+            } else {
+              result = { success: false, message: `No ${intent.status} complaints found in category: ${intent.category}` };
+            }
+            break;
+
+          case 'date_range':
+            url = `${API_DATE_RANGE_URL}?start_date=${intent.value.start}&end_date=${intent.value.end}`;
+            displayTitle = `Complaints from ${intent.value.start} to ${intent.value.end}`;
+            const dateResult = await runAnalysisQuery(url);
+            if (dateResult.success && dateResult.data) {
+              const formattedData = formatRecordsToHtml(dateResult.data, displayTitle);
+              result = { success: true, content: formattedData.content, isAnalysis: true };
+            } else {
+              result = dateResult;
+            }
+            break;
+
+          case 'overtime':
+            url = API_OVERTIME_URL;
+            displayTitle = "Overtime / SLA Violation Complaints";
+            const overtimeResult = await runAnalysisQuery(url);
+            if (overtimeResult.success && overtimeResult.data) {
+              const formattedData = formatRecordsToHtml(overtimeResult.data, displayTitle);
+              result = { success: true, content: formattedData.content, isAnalysis: true };
+            } else {
+              result = overtimeResult;
+            }
+            break;
+
+          case 'resolution_time':
+            url = API_ALL_DATA_URL;
+            const allComplaintsResTime = await runAnalysisQuery(url);
+            if (allComplaintsResTime.success && allComplaintsResTime.data) {
+              const complaints = Array.isArray(allComplaintsResTime.data) ? allComplaintsResTime.data : [];
+              
+              let resolutionTimes = [];
+              complaints.forEach(complaint => {
+                // Try all possible start date columns
+                let startDate = complaint['date_of_issue'] || complaint['date_entry'] || 
+                               complaint['Entry Date'] || complaint['entry_date'] ||
+                               complaint['Date of Issue'] || complaint['Date Entry'];
+                
+                // Try all possible end date columns
+                let endDate = complaint['completed_date'] || complaint['closed_date'] || 
+                             complaint['rca_date'] || complaint['capa_date'] ||
+                             complaint['Completed Date'] || complaint['Closed Date'] ||
+                             complaint['RCA Date'] || complaint['CAPA Date'];
+                
+                if (startDate && endDate) {
+                  try {
+                    // Clean up date strings
+                    startDate = String(startDate).trim();
+                    endDate = String(endDate).trim();
+                    
+                    const start = new Date(startDate);
+                    const end = new Date(endDate);
+                    
+                    // Check if dates are valid
+                    if (!isNaN(start.getTime()) && !isNaN(end.getTime())) {
+                      const timeDiff = Math.abs(end - start);
+                      const days = timeDiff / (1000 * 60 * 60 * 24);
+                      
+                      // Only include valid positive numbers
+                      if (days > 0 && !isNaN(days) && isFinite(days)) {
+                        resolutionTimes.push(Math.ceil(days));
+                      }
+                    }
+                  } catch (e) {
+                    console.log("Date parse error:", e);
+                  }
+                }
+              });
+              
+              if (resolutionTimes.length > 0) {
+                const sorted = resolutionTimes.sort((a, b) => a - b);
+                const avgTime = (resolutionTimes.reduce((a, b) => a + b, 0) / resolutionTimes.length).toFixed(1);
+                const minTime = sorted[0];
+                const maxTime = sorted[sorted.length - 1];
+                const medianTime = sorted[Math.floor(sorted.length / 2)];
+                
+                result = {
+                  success: true,
+                  content: `<div class="space-y-3">
+                    <h2 class="text-2xl font-bold text-primary mb-4">⏱️ Resolution Time Analysis</h2>
+                    <div class="grid grid-cols-2 gap-3">
+                      <div class="stat-card">
+                        <div class="text-text-muted text-xs uppercase">Average Resolution Time</div>
+                        <div class="text-2xl font-bold text-yellow-400">${avgTime} days</div>
+                      </div>
+                      <div class="stat-card">
+                        <div class="text-text-muted text-xs uppercase">Minimum Resolution Time</div>
+                        <div class="text-2xl font-bold text-green-400">${minTime} days</div>
+                      </div>
+                      <div class="stat-card">
+                        <div class="text-text-muted text-xs uppercase">Maximum Resolution Time</div>
+                        <div class="text-2xl font-bold text-red-400">${maxTime} days</div>
+                      </div>
+                      <div class="stat-card">
+                        <div class="text-text-muted text-xs uppercase">Median Resolution Time</div>
+                        <div class="text-2xl font-bold text-blue-400">${medianTime} days</div>
+                      </div>
+                    </div>
+                    <div class="p-3 bg-gray-800 rounded border border-gray-700 mt-4">
+                      <div class="text-sm text-gray-300">
+                        <strong class="text-text-light">Summary:</strong> Out of ${complaints.length} total complaints, ${resolutionTimes.length} have valid date information.
+                      </div>
+                    </div>
+                  </div>`,
+                  isAnalysis: true
+                };
+              } else {
+                result = { success: false, message: `<span class="text-red-400">No valid resolution times found</span><br><small class="text-gray-400">Out of ${complaints.length} complaints, none have valid start and end dates.</small>` };
+              }
+            } else {
+              result = allComplaintsResTime;
+            }
+            break;
+
+          case 'assignee':
+            url = API_ASSIGNEE_URL + encodeURIComponent(intent.value);
+            displayTitle = `Complaints Assigned to: ${intent.value}`;
+            const assigneeResult = await runAnalysisQuery(url);
+            if (assigneeResult.success && assigneeResult.data) {
+              const formattedData = formatRecordsToHtml(assigneeResult.data, displayTitle);
+              result = { success: true, content: formattedData.content, isAnalysis: true };
+            } else {
+              result = assigneeResult;
+            }
+            break;
+
+          case 'complaint_id':
+            url = API_COMPLAINT_URL + intent.value;
+            displayTitle = `Complaint Details (ID: ${intent.value})`;
+            const idResult = await runAnalysisQuery(url);
+            if (idResult.success) {
+              result = { success: true, content: `<strong>${displayTitle}:</strong> ${formatJsonToHtml(idResult.data)}`, isAnalysis: true };
+            } else {
+              result = idResult;
+            }
+            break;
+
+          case 'phone':
+            const phoneUrl = `${API_FILTER_URL}?phone=${encodeURIComponent(intent.value)}`;
+            const phoneResult = await runAnalysisQuery(phoneUrl);
+            if (phoneResult.success && phoneResult.data && phoneResult.data.length > 0) {
+              const formattedData = formatRecordsToHtml(phoneResult.data, `Complaints with Phone: ${intent.value}`);
+              result = { success: true, content: formattedData.content, isAnalysis: true };
+            } else {
+              result = { success: false, message: `No complaints found with phone number: ${intent.value}` };
+            }
+            break;
+
+          case 'branch':
+            url = API_BRANCH_URL + intent.value;
+            displayTitle = `Branch Complaints (${intent.value})`;
+            const branchResult = await runAnalysisQuery(url);
+            if (branchResult.success && branchResult.data) {
+              const formattedData = formatRecordsToHtml(branchResult.data, displayTitle);
+              result = { success: true, content: formattedData.content, isAnalysis: true };
+            } else {
+              result = branchResult;
+            }
+            break;
+
+          case 'summary':
+            url = API_SUMMARY_URL;
+            displayTitle = "System Overview";
+            const summaryResult = await runAnalysisQuery(url);
+            if (summaryResult.success) {
+              result = { success: true, content: `<strong>${displayTitle}:</strong> ${formatJsonToHtml(summaryResult.data)}`, isAnalysis: true };
+            } else {
+              result = summaryResult;
+            }
+            break;
+
+          case 'status':
+            url = API_STATUS_URL + intent.value;
+            displayTitle = `Complaints with Status: ${intent.value}`;
+            const statusResult = await runAnalysisQuery(url);
+            if (statusResult.success && statusResult.data) {
+              const formattedData = formatRecordsToHtml(statusResult.data, displayTitle);
+              result = { success: true, content: formattedData.content, isAnalysis: true };
+            } else {
+              result = statusResult;
+            }
+            break;
+
+          case 'analysis_report':
+            const categoryName = intent.value;
+            const filterUrl = `${API_FILTER_URL}?category=${encodeURIComponent(categoryName)}`;
+            const dataResult = await runAnalysisQuery(filterUrl);
+
+            if (!dataResult.success || !dataResult.data || dataResult.data.length === 0) {
+              result = { success: false, message: dataResult.message || `No records found for: ${categoryName}` };
+            } else {
+              const formattedData = formatRecordsToHtml(dataResult.data, `Complaints: ${categoryName}`);
+              appendMessage("ai", formattedData.content, null, true);
+
+              sendButton.innerHTML =
+                '<span class="flex items-center"><svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle></svg> Generating Report...</span>';
+
+              const llmReportResult = await runLLMReportGeneration(dataResult.data, categoryName);
+
+              if (llmReportResult.success) {
+                result = {
+                  success: true,
+                  content: `<h2 class="text-xl font-bold text-red-400 mb-3 border-b border-gray-700 pb-2">🤖 AI Analysis Report</h2>${llmReportResult.content}`,
+                  isAnalysis: true,
+                };
+              } else {
+                result = llmReportResult;
+              }
+            }
+            break;
+
+          case 'category':
+            const catUrl = `${API_FILTER_URL}?category=${encodeURIComponent(intent.value)}`;
+            const catResult = await runAnalysisQuery(catUrl);
+            if (catResult.success && catResult.data && catResult.data.length > 0) {
+              const formattedData = formatRecordsToHtml(catResult.data, `Complaints: ${intent.value}`);
+              result = { success: true, content: formattedData.content, isAnalysis: true };
+            } else {
+              result = { success: false, message: `No complaints found for category: ${intent.value}` };
+            }
+            break;
+
+          case 'general':
+          default:
+            result = await runRAGQuery(question);
+            break;
+        }
+
+        if (result && result.success) {
+          if (result.isAnalysis) {
+            appendMessage("ai", result.content, null, true);
+          } else {
+            appendMessage("ai", result.content, result.sources || null, false);
+          }
+        } else if (result && !result.success) {
+          appendMessage("ai", result.message || "<p class='text-red-400'>Unknown error</p>", null, true);
+        }
+      } catch (err) {
+        appendMessage("ai", `<p class="text-red-400 font-bold">Error:</p> ${err.message}`, null, true);
+      }
+
+      sendButton.disabled = false;
+      sendButton.innerHTML =
+        'Send <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>';
+      userInput.focus();
+    }
+
+    function escapeHtml(text) {
+      if (!text) return "";
+      return String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    window.onload = scrollToBottom;
+  </script>
+</body>
+</html>

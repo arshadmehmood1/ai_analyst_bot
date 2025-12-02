@@ -1,0 +1,2113 @@
+2025-11-15 23:48:45,108 - __main__ - INFO - ============================================================
+2025-11-15 23:48:45,108 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-15 23:48:45,108 - __main__ - INFO - Start Time: 2025-11-15T23:48:45.108229
+2025-11-15 23:48:45,108 - __main__ - INFO - ============================================================
+2025-11-15 23:48:45,108 - __main__ - INFO - Validating environment...
+2025-11-15 23:48:45,108 - __main__ - ERROR - 
+Training failed with error: 'Settings' object has no attribute 'DATA_PATH'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 90, in train_pipeline
+    if not validate_environment():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\train.py", line 42, in validate_environment
+    data_path = Path(settings.DATA_PATH)
+                     ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Settings' object has no attribute 'DATA_PATH'
+2025-11-15 23:51:19,067 - __main__ - INFO - ============================================================
+2025-11-15 23:51:19,068 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-15 23:51:19,068 - __main__ - INFO - Start Time: 2025-11-15T23:51:19.067816
+2025-11-15 23:51:19,068 - __main__ - INFO - ============================================================
+2025-11-15 23:51:19,068 - __main__ - INFO - Validating environment...
+2025-11-15 23:51:19,069 - __main__ - ERROR - 
+Training failed with error: 'Settings' object has no attribute 'INDEX_PATH'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 90, in train_pipeline
+    if not validate_environment():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\train.py", line 49, in validate_environment
+    embeddings_dir = Path(settings.INDEX_PATH).parent
+                          ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Settings' object has no attribute 'INDEX_PATH'
+2025-11-15 23:52:36,815 - __main__ - INFO - ============================================================
+2025-11-15 23:52:36,815 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-15 23:52:36,815 - __main__ - INFO - Start Time: 2025-11-15T23:52:36.815743
+2025-11-15 23:52:36,815 - __main__ - INFO - ============================================================
+2025-11-15 23:52:36,815 - __main__ - INFO - Validating environment...
+2025-11-15 23:52:36,815 - __main__ - INFO - Embeddings directory: embeddings
+2025-11-15 23:52:36,842 - __main__ - INFO - ============================================================
+2025-11-15 23:52:36,843 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-15 23:52:36,843 - __main__ - INFO - ============================================================
+2025-11-15 23:52:36,843 - __main__ - INFO - Data Path: data/
+2025-11-15 23:52:36,843 - __main__ - INFO - Index Path: embeddings/complaint_FAISS_index
+2025-11-15 23:52:36,843 - __main__ - ERROR - 
+Training failed with error: 'Settings' object has no attribute 'EMBEDDING_MODEL'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 94, in train_pipeline
+    print_settings()
+  File "D:\ai-complaint-bot\train.py", line 66, in print_settings
+    logger.info(f"Embedding Model: {settings.EMBEDDING_MODEL}")
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Settings' object has no attribute 'EMBEDDING_MODEL'
+2025-11-15 23:53:45,515 - __main__ - INFO - ============================================================
+2025-11-15 23:53:45,515 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-15 23:53:45,515 - __main__ - INFO - Start Time: 2025-11-15T23:53:45.515414
+2025-11-15 23:53:45,515 - __main__ - INFO - ============================================================
+2025-11-15 23:53:45,515 - __main__ - INFO - Validating environment...
+2025-11-15 23:53:45,515 - __main__ - INFO - Embeddings directory: embeddings
+2025-11-15 23:53:45,515 - __main__ - INFO - ============================================================
+2025-11-15 23:53:45,515 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-15 23:53:45,515 - __main__ - INFO - ============================================================
+2025-11-15 23:53:45,515 - __main__ - INFO - Data Path: data
+2025-11-15 23:53:45,515 - __main__ - INFO - Index Path: embeddings\complaint_FAISS_index
+2025-11-15 23:53:45,515 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-15 23:53:45,515 - __main__ - ERROR - 
+Training failed with error: 'Settings' object has no attribute 'CHUNK_SIZE'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 94, in train_pipeline
+    print_settings()
+  File "D:\ai-complaint-bot\train.py", line 67, in print_settings
+    logger.info(f"Chunk Size: {settings.CHUNK_SIZE}")
+                               ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Settings' object has no attribute 'CHUNK_SIZE'
+2025-11-15 23:54:38,684 - __main__ - INFO - ============================================================
+2025-11-15 23:54:38,684 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-15 23:54:38,684 - __main__ - INFO - Start Time: 2025-11-15T23:54:38.684095
+2025-11-15 23:54:38,684 - __main__ - INFO - ============================================================
+2025-11-15 23:54:38,684 - __main__ - INFO - Validating environment...
+2025-11-15 23:54:38,684 - __main__ - INFO - Embeddings directory: embeddings
+2025-11-15 23:54:38,684 - __main__ - INFO - ============================================================
+2025-11-15 23:54:38,684 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-15 23:54:38,684 - __main__ - INFO - ============================================================
+2025-11-15 23:54:38,684 - __main__ - INFO - Data Path: data
+2025-11-15 23:54:38,684 - __main__ - INFO - Index Path: embeddings\complaint_FAISS_index
+2025-11-15 23:54:38,684 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-15 23:54:38,684 - __main__ - INFO - Chunk Size: 500
+2025-11-15 23:54:38,684 - __main__ - INFO - Chunk Overlap: 50
+2025-11-15 23:54:38,684 - __main__ - ERROR - 
+Training failed with error: 'Settings' object has no attribute 'MODEL_NAME'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 94, in train_pipeline
+    print_settings()
+  File "D:\ai-complaint-bot\train.py", line 69, in print_settings
+    logger.info(f"Model: {settings.MODEL_NAME}")
+                          ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Settings' object has no attribute 'MODEL_NAME'
+2025-11-15 23:55:33,151 - __main__ - INFO - ============================================================
+2025-11-15 23:55:33,151 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-15 23:55:33,151 - __main__ - INFO - Start Time: 2025-11-15T23:55:33.151628
+2025-11-15 23:55:33,151 - __main__ - INFO - ============================================================
+2025-11-15 23:55:33,151 - __main__ - INFO - Validating environment...
+2025-11-15 23:55:33,151 - __main__ - INFO - Embeddings directory: embeddings
+2025-11-15 23:55:33,151 - __main__ - INFO - ============================================================
+2025-11-15 23:55:33,151 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-15 23:55:33,151 - __main__ - INFO - ============================================================
+2025-11-15 23:55:33,151 - __main__ - INFO - Data Path: data
+2025-11-15 23:55:33,151 - __main__ - INFO - Index Path: embeddings\complaint_FAISS_index
+2025-11-15 23:55:33,151 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-15 23:55:33,151 - __main__ - INFO - Chunk Size: 500
+2025-11-15 23:55:33,151 - __main__ - INFO - Chunk Overlap: 50
+2025-11-15 23:55:33,151 - __main__ - INFO - Model: gpt-3.5-turbo
+2025-11-15 23:55:33,151 - __main__ - ERROR - 
+Training failed with error: 'Settings' object has no attribute 'TEMPERATURE'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 94, in train_pipeline
+    print_settings()
+  File "D:\ai-complaint-bot\train.py", line 70, in print_settings
+    logger.info(f"Temperature: {settings.TEMPERATURE}")
+                                ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Settings' object has no attribute 'TEMPERATURE'
+2025-11-15 23:56:15,205 - __main__ - INFO - ============================================================
+2025-11-15 23:56:15,205 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-15 23:56:15,205 - __main__ - INFO - Start Time: 2025-11-15T23:56:15.205522
+2025-11-15 23:56:15,205 - __main__ - INFO - ============================================================
+2025-11-15 23:56:15,205 - __main__ - INFO - Validating environment...
+2025-11-15 23:56:15,205 - __main__ - INFO - Embeddings directory: embeddings
+2025-11-15 23:56:15,205 - __main__ - INFO - ============================================================
+2025-11-15 23:56:15,205 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-15 23:56:15,205 - __main__ - INFO - ============================================================
+2025-11-15 23:56:15,205 - __main__ - INFO - Data Path: data
+2025-11-15 23:56:15,205 - __main__ - INFO - Index Path: embeddings\complaint_FAISS_index
+2025-11-15 23:56:15,205 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-15 23:56:15,205 - __main__ - INFO - Chunk Size: 500
+2025-11-15 23:56:15,205 - __main__ - INFO - Chunk Overlap: 50
+2025-11-15 23:56:15,205 - __main__ - INFO - Model: gpt-3.5-turbo
+2025-11-15 23:56:15,205 - __main__ - INFO - Temperature: 0.7
+2025-11-15 23:56:15,217 - __main__ - INFO - ============================================================
+2025-11-15 23:56:15,217 - __main__ - WARNING - Vector store already exists at: embeddings\complaint_FAISS_index
+2025-11-15 23:56:15,217 - __main__ - WARNING - Use --force to rebuild
+2025-11-15 23:57:11,458 - __main__ - INFO - 
+============================================================
+2025-11-15 23:57:11,458 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-15 23:57:11,474 - __main__ - INFO - ============================================================
+2025-11-15 23:57:11,474 - __main__ - ERROR - 
+Training failed with error: load_complaint_data() takes 0 positional arguments but 1 was given
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 110, in train_pipeline
+    df = load_complaint_data(settings.DATA_PATH)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: load_complaint_data() takes 0 positional arguments but 1 was given
+2025-11-15 23:59:34,685 - __main__ - INFO - ============================================================
+2025-11-15 23:59:34,685 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-15 23:59:34,685 - __main__ - INFO - Start Time: 2025-11-15T23:59:34.685136
+2025-11-15 23:59:34,685 - __main__ - INFO - ============================================================
+2025-11-15 23:59:34,685 - __main__ - INFO - Validating environment...
+2025-11-15 23:59:34,685 - __main__ - INFO - Embeddings directory: embeddings
+2025-11-15 23:59:34,685 - __main__ - INFO - ============================================================
+2025-11-15 23:59:34,685 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-15 23:59:34,685 - __main__ - INFO - ============================================================
+2025-11-15 23:59:34,685 - __main__ - INFO - Data Path: data
+2025-11-15 23:59:34,685 - __main__ - INFO - Index Path: embeddings\complaint_FAISS_index
+2025-11-15 23:59:34,685 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-15 23:59:34,685 - __main__ - INFO - Chunk Size: 500
+2025-11-15 23:59:34,685 - __main__ - INFO - Chunk Overlap: 50
+2025-11-15 23:59:34,685 - __main__ - INFO - Model: gpt-3.5-turbo
+2025-11-15 23:59:34,685 - __main__ - INFO - Temperature: 0.7
+2025-11-15 23:59:34,700 - __main__ - INFO - ============================================================
+2025-11-15 23:59:34,700 - __main__ - WARNING - Vector store already exists at: embeddings\complaint_FAISS_index
+2025-11-15 23:59:34,700 - __main__ - WARNING - Use --force to rebuild
+2025-11-15 23:59:37,633 - __main__ - INFO - 
+============================================================
+2025-11-15 23:59:37,633 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-15 23:59:37,633 - __main__ - INFO - ============================================================
+2025-11-15 23:59:37,633 - __main__ - ERROR - 
+Training failed with error: [ERROR] Failed to load complaint data: [Errno 13] Permission denied: 'data'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\src\ingestion\load_data.py", line 14, in load_complaint_data
+    df = pd.read_csv(csv_path)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 110, in train_pipeline
+    df = load_complaint_data(settings.DATA_PATH)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\src\ingestion\load_data.py", line 26, in load_complaint_data
+    raise Exception(f"[ERROR] Failed to load complaint data: {str(e)}")
+Exception: [ERROR] Failed to load complaint data: [Errno 13] Permission denied: 'data'
+2025-11-16 00:03:09,888 - __main__ - INFO - ============================================================
+2025-11-16 00:03:09,888 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:03:09,888 - __main__ - INFO - Start Time: 2025-11-16T00:03:09.888676
+2025-11-16 00:03:09,888 - __main__ - INFO - ============================================================
+2025-11-16 00:03:09,888 - __main__ - INFO - Validating environment...
+2025-11-16 00:03:09,888 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 00:03:09,888 - __main__ - INFO - ============================================================
+2025-11-16 00:03:09,888 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 00:03:09,888 - __main__ - INFO - ============================================================
+2025-11-16 00:03:09,888 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data
+2025-11-16 00:03:09,888 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:03:09,888 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-16 00:03:09,888 - __main__ - INFO - Chunk Size: 500
+2025-11-16 00:03:09,888 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 00:03:09,888 - __main__ - INFO - Model: gpt-3.5-turbo
+2025-11-16 00:03:09,888 - __main__ - INFO - Temperature: 0.7
+2025-11-16 00:03:09,904 - __main__ - INFO - ============================================================
+2025-11-16 00:03:09,904 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:03:09,904 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 00:03:12,231 - __main__ - INFO - 
+============================================================
+2025-11-16 00:03:12,231 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 00:03:12,231 - __main__ - INFO - ============================================================
+2025-11-16 00:03:12,231 - __main__ - ERROR - 
+Training failed with error: [ERROR] Failed to load complaint data: [Errno 13] Permission denied: 'D:\\ai-complaint-bot\\data'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\src\ingestion\load_data.py", line 14, in load_complaint_data
+    df = pd.read_csv(csv_path)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'D:\\ai-complaint-bot\\data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 110, in train_pipeline
+    df = load_complaint_data(settings.DATA_PATH)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\src\ingestion\load_data.py", line 26, in load_complaint_data
+    raise Exception(f"[ERROR] Failed to load complaint data: {str(e)}")
+Exception: [ERROR] Failed to load complaint data: [Errno 13] Permission denied: 'D:\\ai-complaint-bot\\data'
+2025-11-16 00:04:59,598 - __main__ - INFO - ============================================================
+2025-11-16 00:04:59,598 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:04:59,598 - __main__ - INFO - Start Time: 2025-11-16T00:04:59.598808
+2025-11-16 00:04:59,598 - __main__ - INFO - ============================================================
+2025-11-16 00:04:59,598 - __main__ - INFO - Validating environment...
+2025-11-16 00:04:59,598 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 00:04:59,598 - __main__ - INFO - ============================================================
+2025-11-16 00:04:59,598 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 00:04:59,614 - __main__ - INFO - ============================================================
+2025-11-16 00:04:59,614 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data
+2025-11-16 00:04:59,614 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:04:59,614 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-16 00:04:59,614 - __main__ - INFO - Chunk Size: 500
+2025-11-16 00:04:59,614 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 00:04:59,614 - __main__ - INFO - Model: gpt-3.5-turbo
+2025-11-16 00:04:59,614 - __main__ - INFO - Temperature: 0.7
+2025-11-16 00:04:59,614 - __main__ - INFO - ============================================================
+2025-11-16 00:04:59,616 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:04:59,616 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 00:05:02,210 - __main__ - INFO - 
+============================================================
+2025-11-16 00:05:02,210 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 00:05:02,210 - __main__ - INFO - ============================================================
+2025-11-16 00:05:02,247 - __main__ - INFO - 
+============================================================
+2025-11-16 00:05:02,247 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 00:05:02,248 - __main__ - INFO - ============================================================
+2025-11-16 00:05:02,263 - __main__ - INFO - 
+============================================================
+2025-11-16 00:05:02,263 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE
+2025-11-16 00:05:02,263 - __main__ - INFO - ============================================================
+2025-11-16 00:05:02,263 - __main__ - ERROR - 
+Training failed with error: build_faiss_index() got an unexpected keyword argument 'documents'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 139, in train_pipeline
+    vector_store = build_faiss_index(
+                   ^^^^^^^^^^^^^^^^^^
+TypeError: build_faiss_index() got an unexpected keyword argument 'documents'
+2025-11-16 00:11:05,380 - __main__ - INFO - ============================================================
+2025-11-16 00:11:05,380 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:11:05,380 - __main__ - INFO - Start Time: 2025-11-16T00:11:05.380845
+2025-11-16 00:11:05,380 - __main__ - INFO - ============================================================
+2025-11-16 00:11:05,380 - __main__ - INFO - Validating environment...
+2025-11-16 00:11:05,380 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 00:11:05,380 - __main__ - INFO - ============================================================
+2025-11-16 00:11:05,380 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 00:11:05,380 - __main__ - INFO - ============================================================
+2025-11-16 00:11:05,380 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data
+2025-11-16 00:11:05,380 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:11:05,380 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-16 00:11:05,380 - __main__ - INFO - Chunk Size: 500
+2025-11-16 00:11:05,380 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 00:11:05,380 - __main__ - INFO - Model: gpt-3.5-turbo
+2025-11-16 00:11:05,380 - __main__ - INFO - Temperature: 0.7
+2025-11-16 00:11:05,380 - __main__ - INFO - ============================================================
+2025-11-16 00:11:05,380 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:11:05,389 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 00:11:07,484 - __main__ - INFO - 
+============================================================
+2025-11-16 00:11:07,484 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 00:11:07,484 - __main__ - INFO - ============================================================
+2025-11-16 00:11:07,503 - __main__ - INFO - 
+============================================================
+2025-11-16 00:11:07,503 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 00:11:07,503 - __main__ - INFO - ============================================================
+2025-11-16 00:11:07,514 - __main__ - INFO - 
+============================================================
+2025-11-16 00:11:07,514 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE
+2025-11-16 00:11:07,514 - __main__ - INFO - ============================================================
+2025-11-16 00:11:07,514 - __main__ - ERROR - 
+Training failed with error: build_faiss_index() missing 1 required positional argument: 'embedding_model'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 139, in train_pipeline
+    vector_store = build_faiss_index(
+                   ^^^^^^^^^^^^^^^^^^
+TypeError: build_faiss_index() missing 1 required positional argument: 'embedding_model'
+2025-11-16 00:14:11,605 - __main__ - INFO - ============================================================
+2025-11-16 00:14:11,605 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:14:11,605 - __main__ - INFO - Start Time: 2025-11-16T00:14:11.605164
+2025-11-16 00:14:11,605 - __main__ - INFO - ============================================================
+2025-11-16 00:14:11,605 - __main__ - INFO - Validating environment...
+2025-11-16 00:14:11,605 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 00:14:11,620 - __main__ - INFO - ============================================================
+2025-11-16 00:14:11,620 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 00:14:11,620 - __main__ - INFO - ============================================================
+2025-11-16 00:14:11,620 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data
+2025-11-16 00:14:11,620 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:14:11,620 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-16 00:14:11,620 - __main__ - INFO - Chunk Size: 500
+2025-11-16 00:14:11,620 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 00:14:11,620 - __main__ - INFO - Model: gpt-3.5-turbo
+2025-11-16 00:14:11,620 - __main__ - INFO - Temperature: 0.7
+2025-11-16 00:14:11,620 - __main__ - INFO - ============================================================
+2025-11-16 00:14:11,620 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:14:11,620 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 00:14:27,732 - __main__ - INFO - 
+============================================================
+2025-11-16 00:14:27,732 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 00:14:27,732 - __main__ - INFO - ============================================================
+2025-11-16 00:14:27,747 - __main__ - INFO - 
+============================================================
+2025-11-16 00:14:27,747 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 00:14:27,747 - __main__ - INFO - ============================================================
+2025-11-16 00:14:27,771 - __main__ - INFO - 
+============================================================
+2025-11-16 00:14:27,772 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE
+2025-11-16 00:14:27,772 - __main__ - INFO - ============================================================
+2025-11-16 00:14:27,773 - __main__ - ERROR - 
+Training failed with error: 'str' object has no attribute 'page_content'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 139, in train_pipeline
+    vector_store = build_faiss_index(
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\src\ingestion\build_vector_store.py", line 28, in build_faiss_index
+    split_docs = splitter.split_documents(documents)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\text_splitter.py", line 149, in split_documents
+    texts.append(doc.page_content)
+                 ^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'page_content'
+2025-11-16 00:17:13,636 - __main__ - INFO - ============================================================
+2025-11-16 00:17:13,636 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:17:13,636 - __main__ - INFO - Start Time: 2025-11-16T00:17:13.636926
+2025-11-16 00:17:13,636 - __main__ - INFO - ============================================================
+2025-11-16 00:17:13,636 - __main__ - INFO - Validating environment...
+2025-11-16 00:17:13,636 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 00:17:13,652 - __main__ - INFO - ============================================================
+2025-11-16 00:17:13,652 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 00:17:13,652 - __main__ - INFO - ============================================================
+2025-11-16 00:17:13,652 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data
+2025-11-16 00:17:13,652 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:17:13,652 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-16 00:17:13,652 - __main__ - INFO - Chunk Size: 500
+2025-11-16 00:17:13,652 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 00:17:13,652 - __main__ - INFO - Model: gpt-3.5-turbo
+2025-11-16 00:17:13,652 - __main__ - INFO - Temperature: 0.7
+2025-11-16 00:17:13,652 - __main__ - INFO - ============================================================
+2025-11-16 00:17:13,652 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:17:13,652 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 00:17:15,940 - __main__ - INFO - 
+============================================================
+2025-11-16 00:17:15,940 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 00:17:15,940 - __main__ - INFO - ============================================================
+2025-11-16 00:17:15,955 - __main__ - INFO - 
+============================================================
+2025-11-16 00:17:15,955 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 00:17:15,967 - __main__ - INFO - ============================================================
+2025-11-16 00:17:15,978 - __main__ - INFO - 
+============================================================
+2025-11-16 00:17:15,978 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE
+2025-11-16 00:17:15,978 - __main__ - INFO - ============================================================
+2025-11-16 00:17:16,539 - __main__ - ERROR - 
+Training failed with error: Could not import tiktoken python package. This is needed in order to for OpenAIEmbeddings. Please install it with `pip install tiktoken`.
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\embeddings\openai.py", line 322, in _get_len_safe_embeddings
+    import tiktoken
+ModuleNotFoundError: No module named 'tiktoken'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 139, in train_pipeline
+    vector_store = build_faiss_index(
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\src\ingestion\build_vector_store.py", line 46, in build_faiss_index
+    vectorstore = FAISS.from_documents(split_docs, embeddings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\vectorstores\base.py", line 417, in from_documents
+    return cls.from_texts(texts, embedding, metadatas=metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\vectorstores\faiss.py", line 602, in from_texts
+    embeddings = embedding.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\embeddings\openai.py", line 483, in embed_documents
+    return self._get_len_safe_embeddings(texts, engine=self.deployment)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\embeddings\openai.py", line 324, in _get_len_safe_embeddings
+    raise ImportError(
+ImportError: Could not import tiktoken python package. This is needed in order to for OpenAIEmbeddings. Please install it with `pip install tiktoken`.
+2025-11-16 00:18:19,583 - __main__ - INFO - ============================================================
+2025-11-16 00:18:19,599 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:18:19,599 - __main__ - INFO - Start Time: 2025-11-16T00:18:19.583647
+2025-11-16 00:18:19,599 - __main__ - INFO - ============================================================
+2025-11-16 00:18:19,599 - __main__ - INFO - Validating environment...
+2025-11-16 00:18:19,599 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 00:18:19,599 - __main__ - INFO - ============================================================
+2025-11-16 00:18:19,599 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 00:18:19,599 - __main__ - INFO - ============================================================
+2025-11-16 00:18:19,599 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data
+2025-11-16 00:18:19,599 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:18:19,599 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-16 00:18:19,599 - __main__ - INFO - Chunk Size: 500
+2025-11-16 00:18:19,599 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 00:18:19,599 - __main__ - INFO - Model: gpt-3.5-turbo
+2025-11-16 00:18:19,599 - __main__ - INFO - Temperature: 0.7
+2025-11-16 00:18:19,599 - __main__ - INFO - ============================================================
+2025-11-16 00:18:19,606 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:18:19,606 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 00:18:21,851 - __main__ - INFO - 
+============================================================
+2025-11-16 00:18:21,851 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 00:18:21,851 - __main__ - INFO - ============================================================
+2025-11-16 00:18:21,872 - __main__ - INFO - 
+============================================================
+2025-11-16 00:18:21,872 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 00:18:21,872 - __main__ - INFO - ============================================================
+2025-11-16 00:18:21,886 - __main__ - INFO - 
+============================================================
+2025-11-16 00:18:21,886 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE
+2025-11-16 00:18:21,886 - __main__ - INFO - ============================================================
+2025-11-16 00:18:29,079 - __main__ - ERROR - 
+Training failed with error: module 'openai' has no attribute 'error'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 139, in train_pipeline
+    vector_store = build_faiss_index(
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\src\ingestion\build_vector_store.py", line 46, in build_faiss_index
+    vectorstore = FAISS.from_documents(split_docs, embeddings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\vectorstores\base.py", line 417, in from_documents
+    return cls.from_texts(texts, embedding, metadatas=metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\vectorstores\faiss.py", line 602, in from_texts
+    embeddings = embedding.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\embeddings\openai.py", line 483, in embed_documents
+    return self._get_len_safe_embeddings(texts, engine=self.deployment)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\embeddings\openai.py", line 367, in _get_len_safe_embeddings
+    response = embed_with_retry(
+               ^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\embeddings\openai.py", line 100, in embed_with_retry
+    retry_decorator = _create_retry_decorator(embeddings)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\embeddings\openai.py", line 47, in _create_retry_decorator
+    retry_if_exception_type(openai.error.Timeout)
+                            ^^^^^^^^^^^^
+AttributeError: module 'openai' has no attribute 'error'
+2025-11-16 00:19:33,899 - __main__ - INFO - ============================================================
+2025-11-16 00:19:33,899 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:19:33,899 - __main__ - INFO - Start Time: 2025-11-16T00:19:33.899013
+2025-11-16 00:19:33,899 - __main__ - INFO - ============================================================
+2025-11-16 00:19:33,899 - __main__ - INFO - Validating environment...
+2025-11-16 00:19:33,899 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 00:19:33,914 - __main__ - INFO - ============================================================
+2025-11-16 00:19:33,914 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 00:19:33,914 - __main__ - INFO - ============================================================
+2025-11-16 00:19:33,914 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data
+2025-11-16 00:19:33,914 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:19:33,914 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-16 00:19:33,914 - __main__ - INFO - Chunk Size: 500
+2025-11-16 00:19:33,914 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 00:19:33,914 - __main__ - INFO - Model: gpt-3.5-turbo
+2025-11-16 00:19:33,914 - __main__ - INFO - Temperature: 0.7
+2025-11-16 00:19:33,919 - __main__ - INFO - ============================================================
+2025-11-16 00:19:33,919 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:19:33,919 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 00:19:36,015 - __main__ - INFO - 
+============================================================
+2025-11-16 00:19:36,015 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 00:19:36,015 - __main__ - INFO - ============================================================
+2025-11-16 00:19:36,031 - __main__ - INFO - 
+============================================================
+2025-11-16 00:19:36,031 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 00:19:36,041 - __main__ - INFO - ============================================================
+2025-11-16 00:19:36,051 - __main__ - INFO - 
+============================================================
+2025-11-16 00:19:36,051 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE
+2025-11-16 00:19:36,051 - __main__ - INFO - ============================================================
+2025-11-16 00:19:38,610 - openai - INFO - error_code=invalid_api_key error_message='Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+2025-11-16 00:19:38,610 - __main__ - ERROR - 
+Training failed with error: Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 139, in train_pipeline
+    vector_store = build_faiss_index(
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\src\ingestion\build_vector_store.py", line 46, in build_faiss_index
+    vectorstore = FAISS.from_documents(split_docs, embeddings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\vectorstores\base.py", line 417, in from_documents
+    return cls.from_texts(texts, embedding, metadatas=metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\vectorstores\faiss.py", line 602, in from_texts
+    embeddings = embedding.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\embeddings\openai.py", line 483, in embed_documents
+    return self._get_len_safe_embeddings(texts, engine=self.deployment)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\embeddings\openai.py", line 367, in _get_len_safe_embeddings
+    response = embed_with_retry(
+               ^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\embeddings\openai.py", line 107, in embed_with_retry
+    return _embed_with_retry(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\tenacity\__init__.py", line 336, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\tenacity\__init__.py", line 475, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\tenacity\__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\tenacity\__init__.py", line 398, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Arshad\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Arshad\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\tenacity\__init__.py", line 478, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain\embeddings\openai.py", line 104, in _embed_with_retry
+    response = embeddings.client.create(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\openai\api_resources\embedding.py", line 33, in create
+    response = super().create(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\openai\api_resources\abstract\engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+                           ^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\openai\api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\openai\api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\openai\api_requestor.py", line 763, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.AuthenticationError: Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.
+2025-11-16 00:43:52,669 - __main__ - INFO - ============================================================
+2025-11-16 00:43:52,669 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:43:52,669 - __main__ - INFO - Start Time: 2025-11-16T00:43:52.669294
+2025-11-16 00:43:52,669 - __main__ - INFO - ============================================================
+2025-11-16 00:43:52,669 - __main__ - INFO - Validating environment...
+2025-11-16 00:43:52,669 - __main__ - ERROR - 
+Training failed with error: 'Settings' object has no attribute 'OPENAI_API_KEY'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 90, in train_pipeline
+    if not validate_environment():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\train.py", line 36, in validate_environment
+    if not settings.OPENAI_API_KEY or settings.OPENAI_API_KEY == "your-openai-api-key-here":
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Settings' object has no attribute 'OPENAI_API_KEY'
+2025-11-16 00:44:24,902 - __main__ - INFO - ============================================================
+2025-11-16 00:44:24,902 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:44:24,902 - __main__ - INFO - Start Time: 2025-11-16T00:44:24.902607
+2025-11-16 00:44:24,902 - __main__ - INFO - ============================================================
+2025-11-16 00:44:24,902 - __main__ - INFO - Validating environment...
+2025-11-16 00:44:24,902 - __main__ - ERROR - 
+Training failed with error: 'Settings' object has no attribute 'OPENAI_API_KEY'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 90, in train_pipeline
+    if not validate_environment():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\train.py", line 36, in validate_environment
+    if not settings.OPENAI_API_KEY or settings.OPENAI_API_KEY == "your-openai-api-key-here":
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Settings' object has no attribute 'OPENAI_API_KEY'
+2025-11-16 00:46:29,720 - __main__ - INFO - ============================================================
+2025-11-16 00:46:29,720 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:46:29,720 - __main__ - INFO - Start Time: 2025-11-16T00:46:29.720029
+2025-11-16 00:46:29,720 - __main__ - INFO - ============================================================
+2025-11-16 00:46:29,720 - __main__ - INFO - Validating environment...
+2025-11-16 00:46:29,720 - __main__ - ERROR - 
+Training failed with error: 'Settings' object has no attribute 'DATA_PATH'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 90, in train_pipeline
+    if not validate_environment():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\train.py", line 42, in validate_environment
+    data_path = Path(settings.DATA_PATH)
+                     ^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'Settings' object has no attribute 'DATA_PATH'
+2025-11-16 00:47:32,716 - __main__ - INFO - ============================================================
+2025-11-16 00:47:32,716 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:47:32,716 - __main__ - INFO - Start Time: 2025-11-16T00:47:32.716515
+2025-11-16 00:47:32,716 - __main__ - INFO - ============================================================
+2025-11-16 00:47:32,716 - __main__ - INFO - Validating environment...
+2025-11-16 00:47:32,716 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 00:47:32,716 - __main__ - INFO - ============================================================
+2025-11-16 00:47:32,716 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 00:47:32,716 - __main__ - INFO - ============================================================
+2025-11-16 00:47:32,716 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-16 00:47:32,716 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:47:32,716 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-16 00:47:32,716 - __main__ - INFO - Chunk Size: 500
+2025-11-16 00:47:32,725 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 00:47:32,725 - __main__ - INFO - Model: gpt-4o-mini
+2025-11-16 00:47:32,725 - __main__ - INFO - Temperature: 0.0
+2025-11-16 00:47:32,725 - __main__ - INFO - ============================================================
+2025-11-16 00:47:32,725 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:47:32,725 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 00:47:43,702 - __main__ - INFO - 
+============================================================
+2025-11-16 00:47:43,702 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 00:47:43,702 - __main__ - INFO - ============================================================
+2025-11-16 00:47:43,702 - __main__ - ERROR - 
+Training failed with error: 'Settings' object has no attribute 'COMPLAINT_CSV_PATH'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 110, in train_pipeline
+    df = load_complaint_data()
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\src\ingestion\load_data.py", line 11, in load_complaint_data
+    csv_path = settings.COMPLAINT_CSV_PATH
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'Settings' object has no attribute 'COMPLAINT_CSV_PATH'
+2025-11-16 00:49:50,640 - __main__ - INFO - ============================================================
+2025-11-16 00:49:50,640 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:49:50,640 - __main__ - INFO - Start Time: 2025-11-16T00:49:50.640981
+2025-11-16 00:49:50,656 - __main__ - INFO - ============================================================
+2025-11-16 00:49:50,656 - __main__ - INFO - Validating environment...
+2025-11-16 00:49:50,656 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 00:49:50,656 - __main__ - INFO - ============================================================
+2025-11-16 00:49:50,656 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 00:49:50,656 - __main__ - INFO - ============================================================
+2025-11-16 00:49:50,656 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-16 00:49:50,656 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:49:50,661 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-16 00:49:50,661 - __main__ - INFO - Chunk Size: 500
+2025-11-16 00:49:50,661 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 00:49:50,661 - __main__ - INFO - Model: gpt-4o-mini
+2025-11-16 00:49:50,661 - __main__ - INFO - Temperature: 0.0
+2025-11-16 00:49:50,661 - __main__ - INFO - ============================================================
+2025-11-16 00:49:50,662 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:49:50,662 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 00:49:52,312 - __main__ - INFO - 
+============================================================
+2025-11-16 00:49:52,312 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 00:49:52,312 - __main__ - INFO - ============================================================
+2025-11-16 00:49:52,331 - __main__ - INFO - 
+============================================================
+2025-11-16 00:49:52,331 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 00:49:52,331 - __main__ - INFO - ============================================================
+2025-11-16 00:49:52,341 - __main__ - INFO - 
+============================================================
+2025-11-16 00:49:52,346 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE
+2025-11-16 00:49:52,346 - __main__ - INFO - ============================================================
+2025-11-16 00:49:52,346 - __main__ - ERROR - 
+Training failed with error: 'Settings' object has no attribute 'FAISS_INDEX_PATH'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 141, in train_pipeline
+    index_path=settings.FAISS_INDEX_PATH,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'Settings' object has no attribute 'FAISS_INDEX_PATH'
+2025-11-16 00:50:48,035 - __main__ - INFO - ============================================================
+2025-11-16 00:50:48,035 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:50:48,035 - __main__ - INFO - Start Time: 2025-11-16T00:50:48.035603
+2025-11-16 00:50:48,035 - __main__ - INFO - ============================================================
+2025-11-16 00:50:48,035 - __main__ - INFO - Validating environment...
+2025-11-16 00:50:48,035 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 00:50:48,035 - __main__ - INFO - ============================================================
+2025-11-16 00:50:48,035 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 00:50:48,035 - __main__ - INFO - ============================================================
+2025-11-16 00:50:48,035 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-16 00:50:48,035 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:50:48,047 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-16 00:50:48,047 - __main__ - INFO - Chunk Size: 500
+2025-11-16 00:50:48,047 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 00:50:48,047 - __main__ - INFO - Model: gpt-4o-mini
+2025-11-16 00:50:48,048 - __main__ - INFO - Temperature: 0.0
+2025-11-16 00:50:48,048 - __main__ - INFO - ============================================================
+2025-11-16 00:50:48,048 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:50:48,048 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 00:50:49,658 - __main__ - INFO - 
+============================================================
+2025-11-16 00:50:49,658 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 00:50:49,658 - __main__ - INFO - ============================================================
+2025-11-16 00:50:49,680 - __main__ - INFO - 
+============================================================
+2025-11-16 00:50:49,680 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 00:50:49,681 - __main__ - INFO - ============================================================
+2025-11-16 00:50:49,688 - __main__ - INFO - 
+============================================================
+2025-11-16 00:50:49,688 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE
+2025-11-16 00:50:49,696 - __main__ - INFO - ============================================================
+2025-11-16 00:50:49,709 - __main__ - ERROR - 
+Training failed with error: 'Settings' object has no attribute 'GEMINI_API_KEY'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 139, in train_pipeline
+    vector_store = build_faiss_index(
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\src\ingestion\build_vector_store.py", line 43, in build_faiss_index
+    embeddings = VertexAIEmbeddings(api_key=settings.GEMINI_API_KEY, model=embedding_model)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'Settings' object has no attribute 'GEMINI_API_KEY'
+2025-11-16 00:52:41,230 - __main__ - INFO - ============================================================
+2025-11-16 00:52:41,230 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:52:41,230 - __main__ - INFO - Start Time: 2025-11-16T00:52:41.230888
+2025-11-16 00:52:41,230 - __main__ - INFO - ============================================================
+2025-11-16 00:52:41,230 - __main__ - INFO - Validating environment...
+2025-11-16 00:52:41,230 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 00:52:41,238 - __main__ - INFO - ============================================================
+2025-11-16 00:52:41,239 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 00:52:41,239 - __main__ - INFO - ============================================================
+2025-11-16 00:52:41,239 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-16 00:52:41,239 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:52:41,239 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-16 00:52:41,239 - __main__ - INFO - Chunk Size: 500
+2025-11-16 00:52:41,240 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 00:52:41,240 - __main__ - INFO - Model: gpt-4o-mini
+2025-11-16 00:52:41,240 - __main__ - INFO - Temperature: 0.0
+2025-11-16 00:52:41,240 - __main__ - INFO - ============================================================
+2025-11-16 00:52:41,240 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:52:41,241 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 00:52:42,861 - __main__ - INFO - 
+============================================================
+2025-11-16 00:52:42,861 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 00:52:42,861 - __main__ - INFO - ============================================================
+2025-11-16 00:52:42,861 - __main__ - ERROR - 
+Training failed with error: 'Settings' object has no attribute 'COMPLAINT_CSV_PATH'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 110, in train_pipeline
+    df = load_complaint_data()
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\src\ingestion\load_data.py", line 11, in load_complaint_data
+    csv_path = settings.COMPLAINT_CSV_PATH
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'Settings' object has no attribute 'COMPLAINT_CSV_PATH'
+2025-11-16 00:54:32,507 - __main__ - INFO - ============================================================
+2025-11-16 00:54:32,507 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:54:32,507 - __main__ - INFO - Start Time: 2025-11-16T00:54:32.507794
+2025-11-16 00:54:32,507 - __main__ - INFO - ============================================================
+2025-11-16 00:54:32,507 - __main__ - INFO - Validating environment...
+2025-11-16 00:54:32,507 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 00:54:32,507 - __main__ - INFO - ============================================================
+2025-11-16 00:54:32,507 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 00:54:32,507 - __main__ - INFO - ============================================================
+2025-11-16 00:54:32,507 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-16 00:54:32,507 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:54:32,523 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-16 00:54:32,523 - __main__ - INFO - Chunk Size: 500
+2025-11-16 00:54:32,523 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 00:54:32,523 - __main__ - INFO - Model: gpt-4o-mini
+2025-11-16 00:54:32,523 - __main__ - INFO - Temperature: 0.0
+2025-11-16 00:54:32,523 - __main__ - INFO - ============================================================
+2025-11-16 00:54:32,523 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:54:32,524 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 00:54:34,384 - __main__ - INFO - 
+============================================================
+2025-11-16 00:54:34,384 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 00:54:34,384 - __main__ - INFO - ============================================================
+2025-11-16 00:54:34,385 - __main__ - ERROR - 
+Training failed with error: 'Settings' object has no attribute 'COMPLAINT_CSV_PATH'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 110, in train_pipeline
+    df = load_complaint_data()
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\src\ingestion\load_data.py", line 11, in load_complaint_data
+    csv_path = settings.COMPLAINT_CSV_PATH
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'Settings' object has no attribute 'COMPLAINT_CSV_PATH'
+2025-11-16 00:55:10,882 - __main__ - INFO - ============================================================
+2025-11-16 00:55:10,882 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:55:10,882 - __main__ - INFO - Start Time: 2025-11-16T00:55:10.882551
+2025-11-16 00:55:10,882 - __main__ - INFO - ============================================================
+2025-11-16 00:55:10,882 - __main__ - INFO - Validating environment...
+2025-11-16 00:55:10,882 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 00:55:10,882 - __main__ - INFO - ============================================================
+2025-11-16 00:55:10,882 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 00:55:10,882 - __main__ - INFO - ============================================================
+2025-11-16 00:55:10,882 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-16 00:55:10,882 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:55:10,882 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-16 00:55:10,882 - __main__ - INFO - Chunk Size: 500
+2025-11-16 00:55:10,882 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 00:55:10,882 - __main__ - INFO - Model: gpt-4o-mini
+2025-11-16 00:55:10,882 - __main__ - INFO - Temperature: 0.0
+2025-11-16 00:55:10,882 - __main__ - INFO - ============================================================
+2025-11-16 00:55:10,892 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:55:10,892 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 00:55:12,601 - __main__ - INFO - 
+============================================================
+2025-11-16 00:55:12,601 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 00:55:12,601 - __main__ - INFO - ============================================================
+2025-11-16 00:55:12,603 - __main__ - INFO - 
+============================================================
+2025-11-16 00:55:12,603 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 00:55:12,614 - __main__ - INFO - ============================================================
+2025-11-16 00:55:12,628 - __main__ - INFO - 
+============================================================
+2025-11-16 00:55:12,629 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE
+2025-11-16 00:55:12,629 - __main__ - INFO - ============================================================
+2025-11-16 00:55:12,629 - __main__ - ERROR - 
+Training failed with error: 'Settings' object has no attribute 'FAISS_INDEX_PATH'
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 141, in train_pipeline
+    index_path=settings.FAISS_INDEX_PATH,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'Settings' object has no attribute 'FAISS_INDEX_PATH'
+2025-11-16 00:56:39,908 - __main__ - INFO - ============================================================
+2025-11-16 00:56:39,908 - __main__ - INFO - STARTING TRAINING PIPELINE
+2025-11-16 00:56:39,908 - __main__ - INFO - Start Time: 2025-11-16T00:56:39.908458
+2025-11-16 00:56:39,908 - __main__ - INFO - ============================================================
+2025-11-16 00:56:39,908 - __main__ - INFO - Validating environment...
+2025-11-16 00:56:39,908 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 00:56:39,924 - __main__ - INFO - ============================================================
+2025-11-16 00:56:39,924 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 00:56:39,924 - __main__ - INFO - ============================================================
+2025-11-16 00:56:39,924 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-16 00:56:39,924 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:56:39,924 - __main__ - INFO - Embedding Model: text-embedding-3-small
+2025-11-16 00:56:39,924 - __main__ - INFO - Chunk Size: 500
+2025-11-16 00:56:39,924 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 00:56:39,924 - __main__ - INFO - Model: gpt-4o-mini
+2025-11-16 00:56:39,924 - __main__ - INFO - Temperature: 0.0
+2025-11-16 00:56:39,924 - __main__ - INFO - ============================================================
+2025-11-16 00:56:39,924 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 00:56:39,924 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 00:56:42,080 - __main__ - INFO - 
+============================================================
+2025-11-16 00:56:42,080 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 00:56:42,080 - __main__ - INFO - ============================================================
+2025-11-16 00:56:42,107 - __main__ - INFO - 
+============================================================
+2025-11-16 00:56:42,107 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 00:56:42,107 - __main__ - INFO - ============================================================
+2025-11-16 00:56:42,120 - __main__ - INFO - 
+============================================================
+2025-11-16 00:56:42,120 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE
+2025-11-16 00:56:42,120 - __main__ - INFO - ============================================================
+2025-11-16 00:56:42,137 - __main__ - ERROR - 
+Training failed with error: `VertexAIEmbeddings` is not fully defined; you should define `_LanguageModel`, then call `VertexAIEmbeddings.model_rebuild()`.
+
+For further information visit https://errors.pydantic.dev/2.12/u/class-not-fully-defined
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 139, in train_pipeline
+    vector_store = build_faiss_index(
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\src\ingestion\build_vector_store.py", line 43, in build_faiss_index
+    embeddings = VertexAIEmbeddings(api_key=settings.GEMINI_API_KEY, model=embedding_model)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 224, in warn_if_direct_instance
+    return wrapped(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_community\embeddings\vertexai.py", line 66, in __init__
+    super().__init__(
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pydantic\main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\pydantic\_internal\_mock_val_ser.py", line 100, in __getattr__
+    raise PydanticUserError(self._error_message, code=self._code)
+pydantic.errors.PydanticUserError: `VertexAIEmbeddings` is not fully defined; you should define `_LanguageModel`, then call `VertexAIEmbeddings.model_rebuild()`.
+
+For further information visit https://errors.pydantic.dev/2.12/u/class-not-fully-defined
+2025-11-16 01:27:32,142 - __main__ - INFO - ============================================================
+2025-11-16 01:27:32,142 - __main__ - INFO - STARTING TRAINING PIPELINE (Google Gemini)
+2025-11-16 01:27:32,142 - __main__ - INFO - Start Time: 2025-11-16T01:27:32.142009
+2025-11-16 01:27:32,142 - __main__ - INFO - ============================================================
+2025-11-16 01:27:32,142 - __main__ - INFO - Validating environment...
+2025-11-16 01:27:32,142 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 01:27:32,142 - __main__ - INFO - ============================================================
+2025-11-16 01:27:32,142 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 01:27:32,142 - __main__ - INFO - ============================================================
+2025-11-16 01:27:32,142 - __main__ - INFO - LLM Provider: Google Gemini
+2025-11-16 01:27:32,142 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-16 01:27:32,142 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 01:27:32,142 - __main__ - INFO - Embedding Model: models/embedding-001
+2025-11-16 01:27:32,142 - __main__ - INFO - Chunk Size: 500
+2025-11-16 01:27:32,142 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 01:27:32,142 - __main__ - INFO - LLM Model: gemini-1.5-flash
+2025-11-16 01:27:32,142 - __main__ - INFO - Temperature: 0.0
+2025-11-16 01:27:32,142 - __main__ - INFO - ============================================================
+2025-11-16 01:27:32,142 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 01:27:32,142 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 01:27:34,621 - __main__ - INFO - 
+============================================================
+2025-11-16 01:27:34,621 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 01:27:34,621 - __main__ - INFO - ============================================================
+2025-11-16 01:27:34,621 - __main__ - INFO - 
+============================================================
+2025-11-16 01:27:34,636 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 01:27:34,636 - __main__ - INFO - ============================================================
+2025-11-16 01:27:34,649 - __main__ - INFO - 
+============================================================
+2025-11-16 01:27:34,649 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE (Google Gemini Embeddings)
+2025-11-16 01:27:34,649 - __main__ - INFO - ============================================================
+2025-11-16 01:27:35,835 - __main__ - ERROR - 
+Training failed with error: Error embedding content: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+]
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_google_genai\embeddings.py", line 306, in embed_documents
+    result = self.client.batch_embed_contents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 1438, in batch_embed_contents
+    response = rpc(
+               ^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 141, in train_pipeline
+    vector_store = build_faiss_index(
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\src\ingestion\build_vector_store.py", line 50, in build_faiss_index
+    vectorstore = FAISS.from_documents(split_docs, embeddings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 807, in from_documents
+    return cls.from_texts(texts, embedding, metadatas=metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_community\vectorstores\faiss.py", line 1043, in from_texts
+    embeddings = embedding.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_google_genai\embeddings.py", line 311, in embed_documents
+    raise GoogleGenerativeAIError(msg) from e
+langchain_google_genai._common.GoogleGenerativeAIError: Error embedding content: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+]
+2025-11-16 01:29:57,310 - __main__ - INFO - ============================================================
+2025-11-16 01:29:57,310 - __main__ - INFO - STARTING TRAINING PIPELINE (Google Gemini)
+2025-11-16 01:29:57,310 - __main__ - INFO - Start Time: 2025-11-16T01:29:57.310366
+2025-11-16 01:29:57,310 - __main__ - INFO - ============================================================
+2025-11-16 01:29:57,310 - __main__ - INFO - Validating environment...
+2025-11-16 01:29:57,310 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 01:29:57,310 - __main__ - INFO - [OK] Environment validation passed
+2025-11-16 01:29:57,310 - __main__ - INFO - ============================================================
+2025-11-16 01:29:57,310 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 01:29:57,310 - __main__ - INFO - ============================================================
+2025-11-16 01:29:57,310 - __main__ - INFO - LLM Provider: Google Gemini
+2025-11-16 01:29:57,310 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-16 01:29:57,310 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 01:29:57,310 - __main__ - INFO - Embedding Model: models/embedding-001
+2025-11-16 01:29:57,310 - __main__ - INFO - Chunk Size: 500
+2025-11-16 01:29:57,310 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 01:29:57,310 - __main__ - INFO - LLM Model: gemini-1.5-flash
+2025-11-16 01:29:57,310 - __main__ - INFO - Temperature: 0.0
+2025-11-16 01:29:57,310 - __main__ - INFO - ============================================================
+2025-11-16 01:29:57,310 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 01:29:57,310 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 01:30:01,551 - __main__ - INFO - 
+============================================================
+2025-11-16 01:30:01,551 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 01:30:01,551 - __main__ - INFO - ============================================================
+2025-11-16 01:30:01,551 - __main__ - INFO - [OK] Loaded 138 complaints
+2025-11-16 01:30:01,551 - __main__ - INFO - 
+============================================================
+2025-11-16 01:30:01,551 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 01:30:01,551 - __main__ - INFO - ============================================================
+2025-11-16 01:30:01,576 - __main__ - INFO - [OK] Generated 138 document chunks
+2025-11-16 01:30:01,576 - __main__ - INFO - 
+============================================================
+2025-11-16 01:30:01,576 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE (Google Gemini Embeddings)
+2025-11-16 01:30:01,577 - __main__ - INFO - ============================================================
+2025-11-16 01:30:02,884 - __main__ - ERROR - 
+Training failed with error: Error embedding content: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+]
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_google_genai\embeddings.py", line 306, in embed_documents
+    result = self.client.batch_embed_contents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 1438, in batch_embed_contents
+    response = rpc(
+               ^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 145, in train_pipeline
+    vector_store = build_faiss_index(
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\src\ingestion\build_vector_store.py", line 50, in build_faiss_index
+    vectorstore = FAISS.from_documents(split_docs, embeddings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 807, in from_documents
+    return cls.from_texts(texts, embedding, metadatas=metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_community\vectorstores\faiss.py", line 1043, in from_texts
+    embeddings = embedding.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_google_genai\embeddings.py", line 311, in embed_documents
+    raise GoogleGenerativeAIError(msg) from e
+langchain_google_genai._common.GoogleGenerativeAIError: Error embedding content: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+]
+2025-11-16 01:37:28,722 - __main__ - INFO - ============================================================
+2025-11-16 01:37:28,722 - __main__ - INFO - STARTING TRAINING PIPELINE (Google Gemini)
+2025-11-16 01:37:28,722 - __main__ - INFO - Start Time: 2025-11-16T01:37:28.722394
+2025-11-16 01:37:28,722 - __main__ - INFO - ============================================================
+2025-11-16 01:37:28,722 - __main__ - INFO - Validating environment...
+2025-11-16 01:37:28,722 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 01:37:28,722 - __main__ - INFO - [OK] Environment validation passed
+2025-11-16 01:37:28,722 - __main__ - INFO - ============================================================
+2025-11-16 01:37:28,722 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 01:37:28,722 - __main__ - INFO - ============================================================
+2025-11-16 01:37:28,722 - __main__ - INFO - LLM Provider: Google Gemini
+2025-11-16 01:37:28,722 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-16 01:37:28,722 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 01:37:28,722 - __main__ - INFO - Embedding Model: models/embedding-001
+2025-11-16 01:37:28,722 - __main__ - INFO - Chunk Size: 500
+2025-11-16 01:37:28,722 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 01:37:28,722 - __main__ - INFO - LLM Model: gemini-1.5-flash
+2025-11-16 01:37:28,722 - __main__ - INFO - Temperature: 0.0
+2025-11-16 01:37:28,722 - __main__ - INFO - ============================================================
+2025-11-16 01:37:28,722 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 01:37:28,722 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 01:37:35,889 - __main__ - INFO - 
+============================================================
+2025-11-16 01:37:35,889 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 01:37:35,889 - __main__ - INFO - ============================================================
+2025-11-16 01:37:35,895 - __main__ - INFO - [OK] Loaded 138 complaints
+2025-11-16 01:37:35,895 - __main__ - INFO - 
+============================================================
+2025-11-16 01:37:35,895 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 01:37:35,895 - __main__ - INFO - ============================================================
+2025-11-16 01:37:35,916 - __main__ - INFO - [OK] Generated 138 document chunks
+2025-11-16 01:37:35,916 - __main__ - INFO - 
+============================================================
+2025-11-16 01:37:35,916 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE (Google Gemini Embeddings)
+2025-11-16 01:37:35,917 - __main__ - INFO - ============================================================
+2025-11-16 01:37:37,281 - __main__ - ERROR - 
+Training failed with error: Error embedding content: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+]
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_google_genai\embeddings.py", line 306, in embed_documents
+    result = self.client.batch_embed_contents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 1438, in batch_embed_contents
+    response = rpc(
+               ^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 145, in train_pipeline
+    vector_store = build_faiss_index(
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\src\ingestion\build_vector_store.py", line 50, in build_faiss_index
+    vectorstore = FAISS.from_documents(split_docs, embeddings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 807, in from_documents
+    return cls.from_texts(texts, embedding, metadatas=metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_community\vectorstores\faiss.py", line 1043, in from_texts
+    embeddings = embedding.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_google_genai\embeddings.py", line 311, in embed_documents
+    raise GoogleGenerativeAIError(msg) from e
+langchain_google_genai._common.GoogleGenerativeAIError: Error embedding content: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+]
+2025-11-16 01:40:01,707 - __main__ - INFO - ============================================================
+2025-11-16 01:40:01,707 - __main__ - INFO - STARTING TRAINING PIPELINE (Google Gemini)
+2025-11-16 01:40:01,707 - __main__ - INFO - Start Time: 2025-11-16T01:40:01.707334
+2025-11-16 01:40:01,707 - __main__ - INFO - ============================================================
+2025-11-16 01:40:01,707 - __main__ - INFO - Validating environment...
+2025-11-16 01:40:01,707 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 01:40:01,707 - __main__ - INFO - [OK] Environment validation passed
+2025-11-16 01:40:01,707 - __main__ - INFO - ============================================================
+2025-11-16 01:40:01,707 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 01:40:01,707 - __main__ - INFO - ============================================================
+2025-11-16 01:40:01,707 - __main__ - INFO - LLM Provider: Google Gemini
+2025-11-16 01:40:01,707 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-16 01:40:01,707 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 01:40:01,707 - __main__ - INFO - Embedding Model: models/embedding-001
+2025-11-16 01:40:01,707 - __main__ - INFO - Chunk Size: 500
+2025-11-16 01:40:01,707 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 01:40:01,707 - __main__ - INFO - LLM Model: gemini-1.5-flash
+2025-11-16 01:40:01,707 - __main__ - INFO - Temperature: 0.0
+2025-11-16 01:40:01,707 - __main__ - INFO - ============================================================
+2025-11-16 01:40:01,707 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 01:40:01,707 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 01:40:03,746 - __main__ - INFO - 
+============================================================
+2025-11-16 01:40:03,746 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 01:40:03,746 - __main__ - INFO - ============================================================
+2025-11-16 01:40:03,761 - __main__ - INFO - [OK] Loaded 138 complaints
+2025-11-16 01:40:03,763 - __main__ - INFO - 
+============================================================
+2025-11-16 01:40:03,763 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 01:40:03,763 - __main__ - INFO - ============================================================
+2025-11-16 01:40:03,777 - __main__ - INFO - [OK] Generated 138 document chunks
+2025-11-16 01:40:03,777 - __main__ - INFO - 
+============================================================
+2025-11-16 01:40:03,777 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE (Google Gemini Embeddings)
+2025-11-16 01:40:03,778 - __main__ - INFO - ============================================================
+2025-11-16 01:41:04,979 - __main__ - ERROR - 
+Training failed with error: Error embedding content: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+]
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_google_genai\embeddings.py", line 306, in embed_documents
+    result = self.client.batch_embed_contents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 1438, in batch_embed_contents
+    response = rpc(
+               ^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 145, in train_pipeline
+    vector_store = build_faiss_index(
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\src\ingestion\build_vector_store.py", line 90, in build_faiss_index
+    raise retry_error
+  File "D:\ai-complaint-bot\src\ingestion\build_vector_store.py", line 86, in build_faiss_index
+    batch_embeddings = embeddings.embed_documents(batch_texts)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_google_genai\embeddings.py", line 311, in embed_documents
+    raise GoogleGenerativeAIError(msg) from e
+langchain_google_genai._common.GoogleGenerativeAIError: Error embedding content: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+]
+2025-11-16 01:42:41,033 - __main__ - INFO - ============================================================
+2025-11-16 01:42:41,033 - __main__ - INFO - STARTING TRAINING PIPELINE (Google Gemini)
+2025-11-16 01:42:41,033 - __main__ - INFO - Start Time: 2025-11-16T01:42:41.033916
+2025-11-16 01:42:41,033 - __main__ - INFO - ============================================================
+2025-11-16 01:42:41,033 - __main__ - INFO - Validating environment...
+2025-11-16 01:42:41,033 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 01:42:41,033 - __main__ - INFO - [OK] Environment validation passed
+2025-11-16 01:42:41,033 - __main__ - INFO - ============================================================
+2025-11-16 01:42:41,033 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 01:42:41,033 - __main__ - INFO - ============================================================
+2025-11-16 01:42:41,033 - __main__ - INFO - LLM Provider: Google Gemini
+2025-11-16 01:42:41,033 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-16 01:42:41,033 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 01:42:41,033 - __main__ - INFO - Embedding Model: models/embedding-001
+2025-11-16 01:42:41,033 - __main__ - INFO - Chunk Size: 500
+2025-11-16 01:42:41,033 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 01:42:41,033 - __main__ - INFO - LLM Model: gemini-1.5-flash
+2025-11-16 01:42:41,033 - __main__ - INFO - Temperature: 0.0
+2025-11-16 01:42:41,049 - __main__ - INFO - ============================================================
+2025-11-16 01:42:41,049 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 01:42:41,049 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 01:42:43,683 - __main__ - INFO - 
+============================================================
+2025-11-16 01:42:43,683 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 01:42:43,683 - __main__ - INFO - ============================================================
+2025-11-16 01:42:43,699 - __main__ - INFO - [OK] Loaded 138 complaints
+2025-11-16 01:42:43,699 - __main__ - INFO - 
+============================================================
+2025-11-16 01:42:43,699 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 01:42:43,699 - __main__ - INFO - ============================================================
+2025-11-16 01:42:43,712 - __main__ - INFO - [OK] Generated 138 document chunks
+2025-11-16 01:42:43,712 - __main__ - INFO - 
+============================================================
+2025-11-16 01:42:43,712 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE (Google Gemini Embeddings)
+2025-11-16 01:42:43,712 - __main__ - INFO - ============================================================
+2025-11-16 01:43:44,648 - __main__ - ERROR - 
+Training failed with error: Error embedding content: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+]
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_google_genai\embeddings.py", line 306, in embed_documents
+    result = self.client.batch_embed_contents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 1438, in batch_embed_contents
+    response = rpc(
+               ^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\ai-complaint-bot\train.py", line 145, in train_pipeline
+    vector_store = build_faiss_index(
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\src\ingestion\build_vector_store.py", line 90, in build_faiss_index
+    raise retry_error
+  File "D:\ai-complaint-bot\src\ingestion\build_vector_store.py", line 86, in build_faiss_index
+    batch_embeddings = embeddings.embed_documents(batch_texts)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-complaint-bot\venv\Lib\site-packages\langchain_google_genai\embeddings.py", line 311, in embed_documents
+    raise GoogleGenerativeAIError(msg) from e
+langchain_google_genai._common.GoogleGenerativeAIError: Error embedding content: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+]
+2025-11-16 01:49:10,040 - __main__ - INFO - ============================================================
+2025-11-16 01:49:10,040 - __main__ - INFO - STARTING TRAINING PIPELINE (Google Gemini)
+2025-11-16 01:49:10,040 - __main__ - INFO - Start Time: 2025-11-16T01:49:10.040993
+2025-11-16 01:49:10,040 - __main__ - INFO - ============================================================
+2025-11-16 01:49:10,040 - __main__ - INFO - Validating environment...
+2025-11-16 01:49:10,040 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 01:49:10,040 - __main__ - INFO - [OK] Environment validation passed
+2025-11-16 01:49:10,040 - __main__ - INFO - ============================================================
+2025-11-16 01:49:10,040 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 01:49:10,040 - __main__ - INFO - ============================================================
+2025-11-16 01:49:10,040 - __main__ - INFO - LLM Provider: Google Gemini
+2025-11-16 01:49:10,040 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-16 01:49:10,040 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 01:49:10,040 - __main__ - INFO - Embedding Model: models/text-embedding-004
+2025-11-16 01:49:10,040 - __main__ - INFO - Chunk Size: 500
+2025-11-16 01:49:10,040 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 01:49:10,040 - __main__ - INFO - LLM Model: gemini-2.0-flash-exp
+2025-11-16 01:49:10,040 - __main__ - INFO - Temperature: 0.0
+2025-11-16 01:49:10,040 - __main__ - INFO - ============================================================
+2025-11-16 01:49:10,056 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 01:49:10,056 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 01:49:12,084 - __main__ - INFO - 
+============================================================
+2025-11-16 01:49:12,084 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 01:49:12,084 - __main__ - INFO - ============================================================
+2025-11-16 01:49:12,100 - __main__ - INFO - [OK] Loaded 138 complaints
+2025-11-16 01:49:12,100 - __main__ - INFO - 
+============================================================
+2025-11-16 01:49:12,100 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 01:49:12,100 - __main__ - INFO - ============================================================
+2025-11-16 01:49:12,110 - __main__ - INFO - [OK] Generated 138 document chunks
+2025-11-16 01:49:12,110 - __main__ - INFO - 
+============================================================
+2025-11-16 01:49:12,110 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE (Google Gemini Embeddings)
+2025-11-16 01:49:12,110 - __main__ - INFO - ============================================================
+2025-11-16 01:53:31,883 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-16 01:53:31,935 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-16 01:53:31,967 - __main__ - INFO - ✓ Vector store saved to: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 01:53:31,968 - __main__ - INFO - 
+============================================================
+2025-11-16 01:53:31,968 - __main__ - INFO - TRAINING COMPLETED SUCCESSFULLY!
+2025-11-16 01:53:31,969 - __main__ - INFO - ============================================================
+2025-11-16 01:53:31,969 - __main__ - INFO - Start Time: 2025-11-16T01:49:10.040993
+2025-11-16 01:53:31,969 - __main__ - INFO - End Time: 2025-11-16T01:53:31.968529
+2025-11-16 01:53:31,969 - __main__ - INFO - Duration: 261.93 seconds (4.37 minutes)
+2025-11-16 01:53:31,969 - __main__ - INFO - Total Documents: 138
+2025-11-16 01:53:31,969 - __main__ - INFO - Index Location: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 01:53:31,970 - __main__ - INFO - LLM Provider: Google Gemini
+2025-11-16 01:53:31,970 - __main__ - INFO - ============================================================
+2025-11-16 01:53:31,970 - __main__ - INFO - 
+NEXT STEPS:
+2025-11-16 01:53:31,970 - __main__ - INFO - 1. Test the bot: python -m src.bot.assistant
+2025-11-16 01:53:31,970 - __main__ - INFO - 2. Start API: python -m src.api.app
+2025-11-16 01:53:31,971 - __main__ - INFO - 3. View API docs: http://localhost:8000/docs
+2025-11-16 01:53:31,971 - __main__ - INFO - 
+
+2025-11-16 01:53:31,971 - __main__ - INFO - 
+============================================================
+2025-11-16 01:53:31,972 - __main__ - INFO - VERIFYING INDEX (Google Gemini Embeddings)
+2025-11-16 01:53:31,972 - __main__ - INFO - ============================================================
+2025-11-16 01:53:31,994 - __main__ - INFO - ✓ Index loaded successfully
+2025-11-16 01:53:31,994 - __main__ - INFO - ✓ Number of vectors: 468
+2025-11-16 01:53:33,136 - __main__ - INFO - ✓ Test query successful, found 3 results
+2025-11-16 01:53:33,136 - __main__ - INFO - 
+Sample result:
+2025-11-16 01:53:33,136 - __main__ - INFO - Content: Close Feedback:
+FOS team called the complainant, and he confirmed that he received his amount and is satisfied with the resolution.
+
+Feedback Summary:
+
+
+Complaint Summary:
+
+
+CAPA Summary:...
+2025-11-16 01:53:33,136 - __main__ - INFO - Metadata: {}
+2025-11-16 01:53:33,136 - __main__ - INFO - 
+✓ Index verification passed!
+2025-11-16 02:23:15,565 - __main__ - INFO - ============================================================
+2025-11-16 02:23:15,565 - __main__ - INFO - STARTING TRAINING PIPELINE (Google Gemini)
+2025-11-16 02:23:15,565 - __main__ - INFO - Start Time: 2025-11-16T02:23:15.565161
+2025-11-16 02:23:15,565 - __main__ - INFO - ============================================================
+2025-11-16 02:23:15,565 - __main__ - INFO - Validating environment...
+2025-11-16 02:23:15,565 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-16 02:23:15,565 - __main__ - INFO - [OK] Environment validation passed
+2025-11-16 02:23:15,565 - __main__ - INFO - ============================================================
+2025-11-16 02:23:15,565 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-16 02:23:15,565 - __main__ - INFO - ============================================================
+2025-11-16 02:23:15,565 - __main__ - INFO - LLM Provider: Google Gemini
+2025-11-16 02:23:15,565 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-16 02:23:15,565 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 02:23:15,565 - __main__ - INFO - Embedding Model: models/text-embedding-004
+2025-11-16 02:23:15,565 - __main__ - INFO - Chunk Size: 500
+2025-11-16 02:23:15,565 - __main__ - INFO - Chunk Overlap: 50
+2025-11-16 02:23:15,580 - __main__ - INFO - LLM Model: gemini-2.0-flash-live
+2025-11-16 02:23:15,580 - __main__ - INFO - Temperature: 0.0
+2025-11-16 02:23:15,580 - __main__ - INFO - ============================================================
+2025-11-16 02:23:15,580 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 02:23:15,580 - __main__ - WARNING - Use --force to rebuild
+2025-11-16 02:23:18,239 - __main__ - INFO - 
+============================================================
+2025-11-16 02:23:18,239 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-16 02:23:18,239 - __main__ - INFO - ============================================================
+2025-11-16 02:23:18,239 - __main__ - INFO - [OK] Loaded 138 complaints
+2025-11-16 02:23:18,239 - __main__ - INFO - 
+============================================================
+2025-11-16 02:23:18,239 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-16 02:23:18,239 - __main__ - INFO - ============================================================
+2025-11-16 02:23:18,261 - __main__ - INFO - [OK] Generated 138 document chunks
+2025-11-16 02:23:18,261 - __main__ - INFO - 
+============================================================
+2025-11-16 02:23:18,261 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE (Google Gemini Embeddings)
+2025-11-16 02:23:18,262 - __main__ - INFO - ============================================================
+2025-11-16 02:27:35,630 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-16 02:27:35,677 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-16 02:27:35,711 - __main__ - INFO - ✓ Vector store saved to: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 02:27:35,711 - __main__ - INFO - 
+============================================================
+2025-11-16 02:27:35,711 - __main__ - INFO - TRAINING COMPLETED SUCCESSFULLY!
+2025-11-16 02:27:35,715 - __main__ - INFO - ============================================================
+2025-11-16 02:27:35,715 - __main__ - INFO - Start Time: 2025-11-16T02:23:15.565161
+2025-11-16 02:27:35,715 - __main__ - INFO - End Time: 2025-11-16T02:27:35.711541
+2025-11-16 02:27:35,715 - __main__ - INFO - Duration: 260.15 seconds (4.34 minutes)
+2025-11-16 02:27:35,715 - __main__ - INFO - Total Documents: 138
+2025-11-16 02:27:35,715 - __main__ - INFO - Index Location: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-16 02:27:35,715 - __main__ - INFO - LLM Provider: Google Gemini
+2025-11-16 02:27:35,716 - __main__ - INFO - ============================================================
+2025-11-16 02:27:35,716 - __main__ - INFO - 
+NEXT STEPS:
+2025-11-16 02:27:35,716 - __main__ - INFO - 1. Test the bot: python -m src.bot.assistant
+2025-11-16 02:27:35,716 - __main__ - INFO - 2. Start API: python -m src.api.app
+2025-11-16 02:27:35,717 - __main__ - INFO - 3. View API docs: http://localhost:8000/docs
+2025-11-16 02:27:35,717 - __main__ - INFO - 
+
+2025-11-16 02:27:35,718 - __main__ - INFO - 
+============================================================
+2025-11-16 02:27:35,718 - __main__ - INFO - VERIFYING INDEX (Google Gemini Embeddings)
+2025-11-16 02:27:35,718 - __main__ - INFO - ============================================================
+2025-11-16 02:27:35,742 - __main__ - INFO - ✓ Index loaded successfully
+2025-11-16 02:27:35,743 - __main__ - INFO - ✓ Number of vectors: 468
+2025-11-16 02:27:37,055 - __main__ - INFO - ✓ Test query successful, found 3 results
+2025-11-16 02:27:37,055 - __main__ - INFO - 
+Sample result:
+2025-11-16 02:27:37,055 - __main__ - INFO - Content: Close Feedback:
+FOS team called the complainant, and he confirmed that he received his amount and is satisfied with the resolution.
+
+Feedback Summary:
+
+
+Complaint Summary:
+
+
+CAPA Summary:...
+2025-11-16 02:27:37,055 - __main__ - INFO - Metadata: {}
+2025-11-16 02:27:37,055 - __main__ - INFO - 
+✓ Index verification passed!
+2025-11-17 15:59:50,008 - __main__ - INFO - ============================================================
+2025-11-17 15:59:50,008 - __main__ - INFO - STARTING TRAINING PIPELINE (Google Gemini)
+2025-11-17 15:59:50,008 - __main__ - INFO - Start Time: 2025-11-17T15:59:50.008401
+2025-11-17 15:59:50,008 - __main__ - INFO - ============================================================
+2025-11-17 15:59:50,008 - __main__ - INFO - Validating environment...
+2025-11-17 15:59:50,008 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-17 15:59:50,008 - __main__ - INFO - [OK] Environment validation passed
+2025-11-17 15:59:50,008 - __main__ - INFO - ============================================================
+2025-11-17 15:59:50,008 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-17 15:59:50,008 - __main__ - INFO - ============================================================
+2025-11-17 15:59:50,008 - __main__ - INFO - LLM Provider: Google Gemini
+2025-11-17 15:59:50,008 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-17 15:59:50,008 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-17 15:59:50,008 - __main__ - INFO - Embedding Model: models/text-embedding-004
+2025-11-17 15:59:50,008 - __main__ - INFO - Chunk Size: 500
+2025-11-17 15:59:50,008 - __main__ - INFO - Chunk Overlap: 50
+2025-11-17 15:59:50,008 - __main__ - INFO - LLM Model: gemini-2.0-flash-live
+2025-11-17 15:59:50,008 - __main__ - INFO - Temperature: 0.0
+2025-11-17 15:59:50,008 - __main__ - INFO - ============================================================
+2025-11-17 15:59:50,008 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-17 15:59:50,008 - __main__ - WARNING - Use --force to rebuild
+2025-11-17 16:00:11,401 - __main__ - INFO - Training cancelled by user
+2025-11-17 16:01:41,832 - __main__ - INFO - ============================================================
+2025-11-17 16:01:41,832 - __main__ - INFO - STARTING TRAINING PIPELINE (Google Gemini)
+2025-11-17 16:01:41,832 - __main__ - INFO - Start Time: 2025-11-17T16:01:41.832121
+2025-11-17 16:01:41,832 - __main__ - INFO - ============================================================
+2025-11-17 16:01:41,832 - __main__ - INFO - Validating environment...
+2025-11-17 16:01:41,832 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-17 16:01:41,832 - __main__ - INFO - [OK] Environment validation passed
+2025-11-17 16:01:41,832 - __main__ - INFO - ============================================================
+2025-11-17 16:01:41,832 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-17 16:01:41,832 - __main__ - INFO - ============================================================
+2025-11-17 16:01:41,832 - __main__ - INFO - LLM Provider: Google Gemini
+2025-11-17 16:01:41,832 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-17 16:01:41,832 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-17 16:01:41,832 - __main__ - INFO - Embedding Model: models/text-embedding-004
+2025-11-17 16:01:41,832 - __main__ - INFO - Chunk Size: 500
+2025-11-17 16:01:41,832 - __main__ - INFO - Chunk Overlap: 50
+2025-11-17 16:01:41,832 - __main__ - INFO - Embedding Batch Size: 10
+2025-11-17 16:01:41,832 - __main__ - INFO - Embedding Batch Delay: 5.0s
+2025-11-17 16:01:41,832 - __main__ - INFO - LLM Model: gemini-2.0-flash-live
+2025-11-17 16:01:41,832 - __main__ - INFO - Temperature: 0.0
+2025-11-17 16:01:41,832 - __main__ - INFO - ============================================================
+2025-11-17 16:01:41,832 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-17 16:01:41,832 - __main__ - WARNING - Use --force to rebuild
+2025-11-17 16:01:43,570 - __main__ - INFO - 
+============================================================
+2025-11-17 16:01:43,570 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-17 16:01:43,570 - __main__ - INFO - ============================================================
+2025-11-17 16:01:43,601 - __main__ - INFO - [OK] Loaded 138 complaints
+2025-11-17 16:01:43,601 - __main__ - INFO - 
+============================================================
+2025-11-17 16:01:43,601 - __main__ - INFO - STEP 2: PREPROCESSING DATA
+2025-11-17 16:01:43,601 - __main__ - INFO - ============================================================
+2025-11-17 16:01:43,617 - __main__ - INFO - [OK] Generated 138 document chunks
+2025-11-17 16:01:43,617 - __main__ - INFO - 
+============================================================
+2025-11-17 16:01:43,617 - __main__ - INFO - STEP 3: BUILDING VECTOR STORE (Google Gemini Embeddings)
+2025-11-17 16:01:43,618 - __main__ - INFO - ============================================================
+2025-11-17 16:01:43,618 - src.ingestion.build_vector_store - INFO - 📌 Total documents: 138
+2025-11-17 16:01:43,619 - src.ingestion.build_vector_store - INFO - 📌 Splitting documents...
+2025-11-17 16:01:43,634 - src.ingestion.build_vector_store - INFO - 📌 Total chunks after splitting: 468
+2025-11-17 16:01:43,634 - src.ingestion.build_vector_store - INFO - 📌 Creating embeddings with Google Gemini...
+2025-11-17 16:01:43,635 - src.ingestion.build_vector_store - INFO -    Using rate limiting: batch_size=10, delay=5.0s
+2025-11-17 16:01:43,664 - src.ingestion.rate_limited_embeddings - INFO - Initialized RateLimitedGoogleEmbeddings:
+2025-11-17 16:01:43,664 - src.ingestion.rate_limited_embeddings - INFO -   - Batch size: 10
+2025-11-17 16:01:43,664 - src.ingestion.rate_limited_embeddings - INFO -   - Delay between batches: 5.0s
+2025-11-17 16:01:43,664 - src.ingestion.rate_limited_embeddings - INFO -   - Max retries: 3
+2025-11-17 16:01:43,664 - src.ingestion.build_vector_store - INFO - 📌 Building FAISS index with rate limiting...
+2025-11-17 16:01:43,664 - src.ingestion.build_vector_store - INFO - ⏱️  This may take a few minutes due to API rate limits...
+2025-11-17 16:01:43,664 - src.ingestion.build_vector_store - INFO - 📌 Starting embedding generation for 468 chunks...
+2025-11-17 16:01:43,664 - src.ingestion.rate_limited_embeddings - INFO - Starting embedding process for 468 documents
+2025-11-17 16:01:43,664 - src.ingestion.rate_limited_embeddings - INFO - Will process in 47 batches
+2025-11-17 16:01:43,664 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 1/47: Processing 10 documents...
+2025-11-17 16:01:44,486 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:01:49,492 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 2/47: Processing 10 documents...
+2025-11-17 16:01:50,007 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:01:55,014 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 3/47: Processing 10 documents...
+2025-11-17 16:01:55,548 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:02:00,555 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 4/47: Processing 10 documents...
+2025-11-17 16:02:01,062 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:02:06,078 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 5/47: Processing 10 documents...
+2025-11-17 16:02:06,584 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:02:11,585 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 6/47: Processing 10 documents...
+2025-11-17 16:02:12,109 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:02:17,114 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 7/47: Processing 10 documents...
+2025-11-17 16:02:17,620 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:02:22,630 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 8/47: Processing 10 documents...
+2025-11-17 16:02:23,234 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:02:28,242 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 9/47: Processing 10 documents...
+2025-11-17 16:02:28,754 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:02:33,766 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 10/47: Processing 10 documents...
+2025-11-17 16:02:34,264 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:02:39,276 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 11/47: Processing 10 documents...
+2025-11-17 16:02:39,886 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:02:44,895 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 12/47: Processing 10 documents...
+2025-11-17 16:02:45,413 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:02:50,430 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 13/47: Processing 10 documents...
+2025-11-17 16:02:50,988 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:02:56,000 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 14/47: Processing 10 documents...
+2025-11-17 16:02:56,626 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:03:01,630 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 15/47: Processing 10 documents...
+2025-11-17 16:03:02,363 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:03:07,364 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 16/47: Processing 10 documents...
+2025-11-17 16:03:08,118 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:03:13,127 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 17/47: Processing 10 documents...
+2025-11-17 16:03:13,686 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:03:18,691 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 18/47: Processing 10 documents...
+2025-11-17 16:03:19,298 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:03:24,300 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 19/47: Processing 10 documents...
+2025-11-17 16:03:24,905 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:03:29,911 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 20/47: Processing 10 documents...
+2025-11-17 16:03:30,416 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:03:35,426 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 21/47: Processing 10 documents...
+2025-11-17 16:03:35,928 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:03:40,935 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 22/47: Processing 10 documents...
+2025-11-17 16:03:41,455 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:03:46,457 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 23/47: Processing 10 documents...
+2025-11-17 16:03:46,981 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:03:51,982 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 24/47: Processing 10 documents...
+2025-11-17 16:03:52,588 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:03:57,596 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 25/47: Processing 10 documents...
+2025-11-17 16:03:58,187 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:04:03,202 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 26/47: Processing 10 documents...
+2025-11-17 16:04:03,698 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:04:08,712 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 27/47: Processing 10 documents...
+2025-11-17 16:04:09,364 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:04:14,368 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 28/47: Processing 10 documents...
+2025-11-17 16:04:14,902 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:04:19,904 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 29/47: Processing 10 documents...
+2025-11-17 16:04:20,407 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:04:25,409 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 30/47: Processing 10 documents...
+2025-11-17 16:04:25,927 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:04:30,931 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 31/47: Processing 10 documents...
+2025-11-17 16:04:31,593 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:04:36,596 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 32/47: Processing 10 documents...
+2025-11-17 16:04:37,207 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:04:42,211 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 33/47: Processing 10 documents...
+2025-11-17 16:04:42,717 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:04:47,720 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 34/47: Processing 10 documents...
+2025-11-17 16:04:48,413 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:04:53,415 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 35/47: Processing 10 documents...
+2025-11-17 16:04:53,957 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:04:58,965 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 36/47: Processing 10 documents...
+2025-11-17 16:04:59,702 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:05:04,706 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 37/47: Processing 10 documents...
+2025-11-17 16:05:05,577 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:05:10,583 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 38/47: Processing 10 documents...
+2025-11-17 16:05:11,217 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:05:16,223 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 39/47: Processing 10 documents...
+2025-11-17 16:05:16,817 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:05:21,820 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 40/47: Processing 10 documents...
+2025-11-17 16:05:22,447 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:05:27,448 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 41/47: Processing 10 documents...
+2025-11-17 16:05:27,973 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:05:32,974 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 42/47: Processing 10 documents...
+2025-11-17 16:05:33,487 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:05:38,492 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 43/47: Processing 10 documents...
+2025-11-17 16:05:39,009 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:05:44,016 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 44/47: Processing 10 documents...
+2025-11-17 16:05:44,642 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:05:49,644 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 45/47: Processing 10 documents...
+2025-11-17 16:05:50,247 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:05:55,248 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 46/47: Processing 10 documents...
+2025-11-17 16:05:55,888 - src.ingestion.rate_limited_embeddings - INFO -    ⏳ Waiting 5.0s before next batch...
+2025-11-17 16:06:00,891 - src.ingestion.rate_limited_embeddings - INFO - 📌 Batch 47/47: Processing 8 documents...
+2025-11-17 16:06:01,477 - src.ingestion.rate_limited_embeddings - INFO - ✅ Successfully embedded 468 documents
+2025-11-17 16:06:01,477 - src.ingestion.build_vector_store - INFO - 📌 Generated 468 embeddings successfully!
+2025-11-17 16:06:01,477 - src.ingestion.build_vector_store - INFO - 📌 Building FAISS vector store...
+2025-11-17 16:06:01,537 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-17 16:06:01,757 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-17 16:06:01,787 - src.ingestion.build_vector_store - INFO - 📌 Saving FAISS index to: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-17 16:06:01,787 - src.ingestion.build_vector_store - INFO - 🎉 FAISS index built and saved successfully!
+2025-11-17 16:06:01,795 - __main__ - INFO - [OK] Vector store saved to: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-17 16:06:01,795 - __main__ - INFO - 
+============================================================
+2025-11-17 16:06:01,795 - __main__ - INFO - TRAINING COMPLETED SUCCESSFULLY!
+2025-11-17 16:06:01,795 - __main__ - INFO - ============================================================
+2025-11-17 16:06:01,796 - __main__ - INFO - Start Time: 2025-11-17T16:01:41.832121
+2025-11-17 16:06:01,796 - __main__ - INFO - End Time: 2025-11-17T16:06:01.795119
+2025-11-17 16:06:01,796 - __main__ - INFO - Duration: 259.96 seconds (4.33 minutes)
+2025-11-17 16:06:01,797 - __main__ - INFO - Total Documents: 138
+2025-11-17 16:06:01,797 - __main__ - INFO - Index Location: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-17 16:06:01,797 - __main__ - INFO - LLM Provider: Google Gemini
+2025-11-17 16:06:01,797 - __main__ - INFO - ============================================================
+2025-11-17 16:06:01,798 - __main__ - INFO - 
+NEXT STEPS:
+2025-11-17 16:06:01,798 - __main__ - INFO - 1. Test the bot: python -m src.bot.assistant
+2025-11-17 16:06:01,798 - __main__ - INFO - 2. Start API: python -m src.api.app
+2025-11-17 16:06:01,798 - __main__ - INFO - 3. View API docs: http://localhost:8000/docs
+2025-11-17 16:06:01,799 - __main__ - INFO - 
+
+2025-11-17 16:06:01,799 - __main__ - INFO - 
+============================================================
+2025-11-17 16:06:01,800 - __main__ - INFO - VERIFYING INDEX (Google Gemini Embeddings)
+2025-11-17 16:06:01,800 - __main__ - INFO - ============================================================
+2025-11-17 16:06:01,821 - __main__ - INFO - [OK] Index loaded successfully
+2025-11-17 16:06:01,821 - __main__ - INFO - [OK] Number of vectors: 468
+2025-11-17 16:06:03,096 - __main__ - INFO - [OK] Test query successful, found 3 results
+2025-11-17 16:06:03,096 - __main__ - INFO - 
+Sample result:
+2025-11-17 16:06:03,096 - __main__ - INFO - Content: Close Feedback:
+FOS team called the complainant, and he confirmed that he received his amount and is satisfied with the resolution.
+
+Feedback Summary:
+
+
+Complaint Summary:
+
+
+CAPA Summary:...
+2025-11-17 16:06:03,096 - __main__ - INFO - Metadata: {}
+2025-11-17 16:06:03,096 - __main__ - INFO - 
+[OK] Index verification passed!
+2025-11-18 19:17:41,243 - __main__ - INFO - ============================================================
+2025-11-18 19:17:41,243 - __main__ - INFO - STARTING TRAINING PIPELINE (Google Gemini)
+2025-11-18 19:17:41,243 - __main__ - INFO - Start Time: 2025-11-18T19:17:41.243105
+2025-11-18 19:17:41,243 - __main__ - INFO - ============================================================
+2025-11-18 19:17:41,243 - __main__ - INFO - Validating environment...
+2025-11-18 19:17:41,243 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-18 19:17:41,243 - __main__ - INFO - [OK] Environment validation passed
+2025-11-18 19:17:41,243 - __main__ - INFO - ============================================================
+2025-11-18 19:17:41,243 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-18 19:17:41,243 - __main__ - INFO - ============================================================
+2025-11-18 19:17:41,243 - __main__ - INFO - LLM Provider: Google Gemini
+2025-11-18 19:17:41,243 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-18 19:17:41,243 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-18 19:17:41,243 - __main__ - INFO - Embedding Model: models/text-embedding-004
+2025-11-18 19:17:41,243 - __main__ - INFO - Chunk Size: 500
+2025-11-18 19:17:41,243 - __main__ - INFO - Chunk Overlap: 50
+2025-11-18 19:17:41,243 - __main__ - INFO - Embedding Batch Size: 10
+2025-11-18 19:17:41,243 - __main__ - INFO - Embedding Batch Delay: 5.0s
+2025-11-18 19:17:41,243 - __main__ - INFO - LLM Model: gemini-2.0-flash-live
+2025-11-18 19:17:41,243 - __main__ - INFO - Temperature: 0.0
+2025-11-18 19:17:41,243 - __main__ - INFO - ============================================================
+2025-11-18 19:17:41,243 - __main__ - WARNING - Vector store already exists at: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-18 19:17:41,243 - __main__ - WARNING - Use --force to rebuild
+2025-11-18 19:17:43,658 - __main__ - INFO - 
+============================================================
+2025-11-18 19:17:43,658 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-18 19:17:43,658 - __main__ - INFO - ============================================================
+2025-11-18 19:17:43,658 - src.ingestion.load_data - INFO - Loading data from: D:\ai-complaint-bot\data\complaints.csv
+2025-11-18 19:17:43,692 - src.ingestion.load_data - ERROR - Missing required columns in CSV: ['Complaint ID', 'Complaint Text', 'Category', 'Branch Code']
+2025-11-18 19:17:43,692 - src.ingestion.load_data - ERROR - Available columns: ['complaint_no', 'ticket_number', 'reference_number', 'is_urgent', 'is_anonymous', 'mobile_number', 'date_of_issue', 'complaint_categories', 'additional_comments', 'person_issue', 'concerned_department', 'previous_history', 'proposed_solution', 'date_entry', 'status', 'in_process_date', 'capa_date', 'rca_date', 'capa', 'rca', 'closed_date', 'bounced_date', 'capa1_date', 'capa2_date', 'capa3_date', 'rca1_date', 'rca2_date', 'rca3_date', 'bounced1_date', 'bounced2_date', 'bounced3_date', 'capa1', 'capa2', 'capa3', 'rca1', 'rca2', 'rca3', 'completed_date', 'unclosed_date', 'rca_deadline', 'rca1_deadline', 'rca2_deadline', 'feedback', 'feedback1', 'lodged_by_agent', 'lodged_from_web', 'rejected_date', 'approval_date', 'close_feedback', 'declined', 'enabled', 'feedback_summary', 'assigned_officer', 'complaint_summary', 'capa_summary']
+2025-11-18 19:17:43,692 - __main__ - ERROR - Failed to load data or data is empty
+2025-11-18 19:18:45,518 - __main__ - INFO - ============================================================
+2025-11-18 19:18:45,518 - __main__ - INFO - STARTING TRAINING PIPELINE (Google Gemini)
+2025-11-18 19:18:45,518 - __main__ - INFO - Start Time: 2025-11-18T19:18:45.518918
+2025-11-18 19:18:45,518 - __main__ - INFO - ============================================================
+2025-11-18 19:18:45,534 - __main__ - INFO - Validating environment...
+2025-11-18 19:18:45,534 - __main__ - INFO - Embeddings directory: D:\ai-complaint-bot\embeddings
+2025-11-18 19:18:45,534 - __main__ - INFO - [OK] Environment validation passed
+2025-11-18 19:18:45,534 - __main__ - INFO - ============================================================
+2025-11-18 19:18:45,534 - __main__ - INFO - TRAINING CONFIGURATION
+2025-11-18 19:18:45,534 - __main__ - INFO - ============================================================
+2025-11-18 19:18:45,534 - __main__ - INFO - LLM Provider: Google Gemini
+2025-11-18 19:18:45,534 - __main__ - INFO - Data Path: D:\ai-complaint-bot\data\complaints.csv
+2025-11-18 19:18:45,534 - __main__ - INFO - Index Path: D:\ai-complaint-bot\embeddings\complaint_FAISS_index
+2025-11-18 19:18:45,534 - __main__ - INFO - Embedding Model: models/text-embedding-004
+2025-11-18 19:18:45,534 - __main__ - INFO - Chunk Size: 500
+2025-11-18 19:18:45,534 - __main__ - INFO - Chunk Overlap: 50
+2025-11-18 19:18:45,534 - __main__ - INFO - Embedding Batch Size: 10
+2025-11-18 19:18:45,534 - __main__ - INFO - Embedding Batch Delay: 5.0s
+2025-11-18 19:18:45,534 - __main__ - INFO - LLM Model: gemini-2.0-flash-live
+2025-11-18 19:18:45,534 - __main__ - INFO - Temperature: 0.0
+2025-11-18 19:18:45,534 - __main__ - INFO - ============================================================
+2025-11-18 19:18:45,534 - __main__ - INFO - 
+============================================================
+2025-11-18 19:18:45,534 - __main__ - INFO - STEP 1: LOADING DATA
+2025-11-18 19:18:45,534 - __main__ - INFO - ============================================================
+2025-11-18 19:18:45,534 - src.ingestion.load_data - INFO - Loading data from: D:\ai-complaint-bot\data\complaints.csv
+2025-11-18 19:18:45,550 - src.ingestion.load_data - ERROR - Missing required columns in CSV: ['Complaint ID', 'Complaint Text', 'Category', 'Branch Code']
+2025-11-18 19:18:45,550 - src.ingestion.load_data - ERROR - Available columns: ['complaint_no', 'ticket_number', 'reference_number', 'is_urgent', 'is_anonymous', 'mobile_number', 'date_of_issue', 'complaint_categories', 'additional_comments', 'person_issue', 'concerned_department', 'previous_history', 'proposed_solution', 'date_entry', 'status', 'in_process_date', 'capa_date', 'rca_date', 'capa', 'rca', 'closed_date', 'bounced_date', 'capa1_date', 'capa2_date', 'capa3_date', 'rca1_date', 'rca2_date', 'rca3_date', 'bounced1_date', 'bounced2_date', 'bounced3_date', 'capa1', 'capa2', 'capa3', 'rca1', 'rca2', 'rca3', 'completed_date', 'unclosed_date', 'rca_deadline', 'rca1_deadline', 'rca2_deadline', 'feedback', 'feedback1', 'lodged_by_agent', 'lodged_from_web', 'rejected_date', 'approval_date', 'close_feedback', 'declined', 'enabled', 'feedback_summary', 'assigned_officer', 'complaint_summary', 'capa_summary']
+2025-11-18 19:18:45,550 - __main__ - ERROR - Failed to load data or data is empty
