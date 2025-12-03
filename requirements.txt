@@ -79,7 +79,7 @@ gql==4.0.0
 gradientai==1.13.1
 grandalf==0.8
 graphviz==0.21
-grpc==1.0.0
+grpcio>=1.60.0
 guardrails==2.0.0
 gunicorn==23.0.0
 h2==4.3.0
