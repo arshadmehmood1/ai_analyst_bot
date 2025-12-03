@@ -24,7 +24,7 @@ class Settings(BaseSettings):
 
     # Aliases for backward compatibility
     COMPLAINT_CSV_PATH: str = DATA_PATH
-    INDEX_PATH: str = r"D:\ai-complaint-bot\embeddings\complaint_FAISS_index"
+    INDEX_PATH: str = r"embeddings/complaint_FAISS_index"
     FAISS_INDEX_PATH: str = INDEX_PATH  # backward-compatible alias
 
     # ==================== Chunking for embeddings =========
