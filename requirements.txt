@@ -87,7 +87,7 @@ numpy==1.26.4
 openai==0.27.8
 orjson==3.11.4
 ormsgpack==1.12.0
-packaging==25.0
+packaging==24.2
 pandas==2.3.3
 pandocfilters==1.5.1
 parso==0.8.5
